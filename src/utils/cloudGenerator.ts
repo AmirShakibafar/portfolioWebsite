@@ -26,6 +26,13 @@ const cloudAssets: { src: string; width: number; height: number }[] = [
   { src: '/clouds/sm-cloud2.png', width: 44, height: 25 },
 ];
 
+// Pre-categorize assets by size
+const smallAssets = cloudAssets.filter(c => c.width < 80);
+const mediumAssets = cloudAssets.filter(c => c.width >= 80 && c.width < 150);
+const largeAssets = cloudAssets.filter(c => c.width >= 150);
+const smallAndMediumAssets = [...smallAssets, ...mediumAssets];
+
+
 const mapRange = (
   value: number,
   inMin: number,
@@ -42,31 +49,35 @@ export const generateClouds = (count: number): CloudConfig[] => {
   const configs: CloudConfig[] = [];
   const minWidth = 44, maxWidth = 190;
   const minOpacity = 0.5, maxOpacity = 1.0;
+  const numLargeClouds = 2;
 
-  for (let i = 0; i < count; i++) {
-    const asset = cloudAssets[Math.floor(Math.random() * cloudAssets.length)];
+  // 1. Generate a fixed number of large clouds
+  for (let i = 0; i < numLargeClouds && i < count; i++) {
+    const asset = largeAssets[Math.floor(Math.random() * largeAssets.length)];
+    // Create the cloud config (this logic is duplicated to avoid a complex helper)
     const direction = Math.random() > 0.5 ? 'right' : 'left';
     const duration = 12000 / asset.width;
     const opacity = mapRange(asset.width, minWidth, maxWidth, minOpacity, maxOpacity);
-
-    // Using the "sweet spot" value you found.
     const topPosition = getRandom(0, 35);
-
-    configs.push({
-      id: i,
-      src: asset.src,
-      top: `${topPosition}%`,
-      width: asset.width,
-      height: asset.height,
-      opacity: opacity,
-      zIndex: Math.round(asset.width),
-      direction: direction,
-      initialOffset: direction === 'left' ? '100vw' : '-20vw',
-      travelDistance: direction === 'left' ? '-150vw' : '150vw',
-      duration: duration,
-      delay: Math.random() * -duration,
-    });
+    configs.push({ id: i, src: asset.src, top: `${topPosition}%`, width: asset.width, height: asset.height, opacity, zIndex: Math.round(asset.width), direction, initialOffset: direction === 'left' ? '100vw' : '-20vw', travelDistance: direction === 'left' ? '-150vw' : '150vw', duration, delay: Math.random() * -duration });
   }
 
+  // 2. Fill the rest with small and medium clouds
+  const remainingCount = count - configs.length;
+  for (let i = 0; i < remainingCount; i++) {
+    const asset = smallAndMediumAssets[Math.floor(Math.random() * smallAndMediumAssets.length)];
+    const direction = Math.random() > 0.5 ? 'right' : 'left';
+    const duration = 12000 / asset.width;
+    const opacity = mapRange(asset.width, minWidth, maxWidth, minOpacity, maxOpacity);
+    const topPosition = getRandom(0, 35);
+    configs.push({ id: i + numLargeClouds, src: asset.src, top: `${topPosition}%`, width: asset.width, height: asset.height, opacity, zIndex: Math.round(asset.width), direction, initialOffset: direction === 'left' ? '100vw' : '-20vw', travelDistance: direction === 'left' ? '-150vw' : '150vw', duration, delay: Math.random() * -duration });
+  }
+
+  // 3. Shuffle the array to mix the large clouds in randomly
+  for (let i = configs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [configs[i], configs[j]] = [configs[j], configs[i]];
+  }
+  
   return configs;
 };

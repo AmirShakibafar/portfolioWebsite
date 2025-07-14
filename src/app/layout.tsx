@@ -56,7 +56,7 @@ const iranSans = localFont({
       style: 'normal',
     },
   ],
-  variable: "--font-sans", // This creates the CSS variable --font-sans
+  variable: "--font-iran",
   display: 'swap',
 });
 

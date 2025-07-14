@@ -14,16 +14,16 @@ type CloudConfig = {
 };
 
 const cloudAssets: { src: string; width: number; height: number }[] = [
-  { src: '/clouds/cloud1.png', width: 118, height: 58 },
-  { src: '/clouds/cloud2.png', width: 146, height: 76 },
-  { src: '/clouds/cloud3.png', width: 82, height: 46 },
-  { src: '/clouds/cloud4.png', width: 71, height: 40 },
-  { src: '/clouds/cloud5.png', width: 190, height: 123 },
-  { src: '/clouds/cloud6.png', width: 95, height: 55 },
-  { src: '/clouds/cloud7.png', width: 101, height: 50 },
-  { src: '/clouds/long-cloud.png', width: 157, height: 42 },
-  { src: '/clouds/sm-cloud.png', width: 49, height: 24 },
-  { src: '/clouds/sm-cloud2.png', width: 44, height: 25 },
+  { src: '/images/clouds/cloud1.png', width: 118, height: 58 },
+  { src: '/images/clouds/cloud2.png', width: 146, height: 76 },
+  { src: '/images/clouds/cloud3.png', width: 82, height: 46 },
+  { src: '/images/clouds/cloud4.png', width: 71, height: 40 },
+  { src: '/images/clouds/cloud5.png', width: 190, height: 123 },
+  { src: '/images/clouds/cloud6.png', width: 95, height: 55 },
+  { src: '/images/clouds/cloud7.png', width: 101, height: 50 },
+  { src: '/images/clouds/long-cloud.png', width: 157, height: 42 },
+  { src: '/images/clouds/sm-cloud.png', width: 49, height: 24 },
+  { src: '/images/clouds/sm-cloud2.png', width: 44, height: 25 },
 ];
 
 // Pre-categorize assets by size

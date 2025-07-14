@@ -1,15 +1,63 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Configure the IRANSansX local font
+const iranSans = localFont({
+  src: [
+    {
+      path: './fonts/IranSansX/IRANSansX-Thin.ttf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-UltraLight.ttf',
+      weight: '200',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-DemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: './fonts/IranSansX/IRANSansX-ExtraBlack.ttf',
+      weight: '950',
+      style: 'normal',
+    },
+  ],
+  variable: "--font-sans", // This creates the CSS variable --font-sans
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -24,9 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${iranSans.variable} antialiased`}>
         {children}
       </body>
     </html>

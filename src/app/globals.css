@@ -11,7 +11,10 @@
   --font-iran: var(--font-iran);
 }
 
-/* --- YOUR UTILITIES --- */
+@utility hero-text-content {
+  @apply flex flex-col justify-center backdrop-blur-sm bg-white/10;
+}
+
 @utility hero-heading {
   @apply font-iran text-[64px] text-blue-900 text-right font-bold;
 }
@@ -20,10 +23,14 @@
   @apply mt-4 text-[28px] text-blue-900 text-right font-semibold;
 }
 
-/* --- NEW UTILITIES --- */
 @utility hero-paragraph {
-  @apply mt-2 text-sm text-gray-700 text-right;
+  @apply mt-4 text-[24px] text-[#003772] text-right font-medium;
 }
+
+@utility hero-highlight {
+  @apply text-[#E50000] font-bold;
+}
+
 
 @utility btn {
   @apply px-6 py-2 rounded-full transition-all duration-300;

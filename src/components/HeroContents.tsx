@@ -1,57 +1,86 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import AnimatedWords from './AnimatedWords';
+import AnimatedNumber from './AnimatedNumber';
 
 export default function HeroContent() {
+  const headingChild: Variants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", damping: 12, stiffness: 100 },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+  };
+
   return (
-    <div className="relative z-10 h-full flex items-center justify-center">
-      <div className="flex items-center gap-8">
-        
-        <motion.div
-          animate={{ y: [0, -15, 0] }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: [0.42, 0, 0.58, 1],
-          }}
-        >
-          <Image
-            src="/images/hero_image.png"
-            alt="Superhero Amir"
-            width={520}
-            height={770}
-          />
-        </motion.div>
+    <>
+      <div
+        className="absolute top-0 right-0 h-full w-2/5 backdrop-blur-sm"
+        style={{
+          maskImage: 'linear-gradient(to left, black 60%, transparent)',
+        }}
+      />
+      <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="flex items-center gap-8">
+          
+          <motion.div
+            animate={{ y: [0, -15, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: [0.42, 0, 0.58, 1],
+            }}
+          >
+            <Image
+              src="/images/hero_image.png"
+              alt="Superhero Amir"
+              width={520}
+              height={770}
+            />
+          </motion.div>
 
-        <div className="flex flex-col">
-          {/* The h1 is now animated */}
-          <h1 className="hero-heading">
-            <AnimatedWords text="!سلام" direction="rtl"/>
-            <AnimatedWords text=" امیر هستم (:" direction="rtl"/>
-          </h1>
-          
-          <AnimatedWords 
-            text="کارم طراحی و توسعه محصولات دیجیتال جذاب و کاربرپسنده" 
-            className="hero-subheading"
-            direction="rtl"
-          />
-          
-          <p className="hero-paragraph">
-            +1.5 سال سابقه | ۴ پروژه واقعی | +36 استار گیت‌هاب
-          </p>
-          
-          <div className="mt-6 flex justify-end gap-4">
-            <button className="btn-secondary">
-              دیدن نمونه کارهام →
-            </button>
-            <button className="btn-primary">
-              تماس با من
-            </button>
+          <div className="flex flex-col p-6">
+            <h1 className="hero-heading">
+              <AnimatedWords text="!سلام" direction="rtl"/>
+              <motion.div 
+                className="flex-row-reverse justify-end"
+                initial="hidden"
+                animate="visible"
+                transition={{ staggerChildren: 0.1 }}
+              >
+                <motion.span variants={headingChild}>(:</motion.span>
+                <motion.span variants={headingChild} className="text-red-500 mx-2">امیر</motion.span>
+                <motion.span variants={headingChild}>هستم</motion.span>
+              </motion.div>
+            </h1>
+            
+            <AnimatedWords 
+              text="کارم طراحی و توسعه محصولات دیجیتال جذاب و کاربرپسنده" 
+              className="hero-subheading"
+              direction="rtl"
+            />
+            
+            <p className="hero-paragraph" dir="rtl">
+              <span className='text-[#E50000] font-bold'>+<AnimatedNumber value={1.5} decimals={1} /></span> سال سابقه | <span className='text-[#E50000] font-bold'><AnimatedNumber value={4} /></span> پروژه واقعی | <span className='text-[#E50000] font-bold'>+<AnimatedNumber value={36} /></span> استار گیت‌هاب
+            </p>
+            
+            <div className="mt-6 flex justify-end gap-4">
+              <button className="btn-secondary">
+                دیدن نمونه کارهام →
+              </button>
+              <button className="btn-primary">
+                تماس با من
+              </button>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
+    </>
   );
 }

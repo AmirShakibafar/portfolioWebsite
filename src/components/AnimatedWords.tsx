@@ -13,7 +13,6 @@ const AnimatedWords = ({
 }) => {
   const words = text.split(" ");
 
-  // This is now a static variant, which resolves the TS warning.
   const container: Variants = {
     hidden: { opacity: 0 },
     visible: {

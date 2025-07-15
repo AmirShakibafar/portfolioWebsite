@@ -33,12 +33,9 @@
 
 
 @utility btn {
-  @apply px-6 py-2 rounded-full transition-all duration-300;
+  @apply px-6 py-6 rounded-full transition-all duration-300;
 }
 
-@utility btn-primary {
-  @apply btn bg-blue-600 text-white hover:bg-blue-700;
-}
 
 @utility btn-secondary {
   @apply btn border border-blue-600 text-blue-600 hover:bg-blue-50;

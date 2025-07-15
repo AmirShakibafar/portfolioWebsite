@@ -1,63 +1,23 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar"; // Import the Navbar
 
-// Configure the IRANSansX local font
 const iranSans = localFont({
   src: [
-    {
-      path: './fonts/IranSansX/IRANSansX-Thin.ttf',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-UltraLight.ttf',
-      weight: '200',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-Light.ttf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-DemiBold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-ExtraBold.ttf',
-      weight: '800',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-Black.ttf',
-      weight: '900',
-      style: 'normal',
-    },
-    {
-      path: './fonts/IranSansX/IRANSansX-ExtraBlack.ttf',
-      weight: '950',
-      style: 'normal',
-    },
+    { path: "./fonts/IranSansX/IRANSansX-Thin.ttf", weight: "100" },
+    { path: "./fonts/IranSansX/IRANSansX-UltraLight.ttf", weight: "200" },
+    { path: "./fonts/IranSansX/IRANSansX-Light.ttf", weight: "300" },
+    { path: "./fonts/IranSansX/IRANSansX-Regular.ttf", weight: "400" },
+    { path: "./fonts/IranSansX/IRANSansX-Medium.ttf", weight: "500" },
+    { path: "./fonts/IranSansX/IRANSansX-DemiBold.ttf", weight: "600" },
+    { path: "./fonts/IranSansX/IRANSansX-Bold.ttf", weight: "700" },
+    { path: "./fonts/IranSansX/IRANSansX-ExtraBold.ttf", weight: "800" },
+    { path: "./fonts/IranSansX/IRANSansX-Black.ttf", weight: "900" },
+    { path: "./fonts/IranSansX/IRANSansX-ExtraBlack.ttf", weight: "950" },
   ],
   variable: "--font-iran",
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -73,7 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${iranSans.variable} antialiased`}>
-        {children}
+        <Navbar /> {/* Add the Navbar here */}
+        <main>{children}</main>
       </body>
     </html>
   );

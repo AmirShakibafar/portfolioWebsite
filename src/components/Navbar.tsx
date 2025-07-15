@@ -1,9 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// Add href for each link for navigation
 const navLinks = [
   { name: "تماس", href: "/contact" },
   { name: "رزومه", href: "/resume" },
@@ -11,17 +10,40 @@ const navLinks = [
   { name: "صفحه اصلی", href: "/" },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+      // This line reverses the animation order to match the RTL layout
+      staggerDirection: -1,
+    },
+  },
+};
+
+const linkVariants: Variants = {
+  hidden: { y: -20, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
     <header className="absolute top-0 z-50 w-full p-4">
       <nav className="flex justify-end px-[200px] py-5">
-        <ul className="flex items-center gap-8 font-iran">
+        <motion.ul
+          className="flex items-center gap-8 font-iran"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <li key={link.name}>
+              <motion.li key={link.name} variants={linkVariants}>
                 <motion.div
                   whileHover={{
                     x: [0, -2, 2, -2, 0],
@@ -39,10 +61,10 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                 </motion.div>
-              </li>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </nav>
     </header>
   );

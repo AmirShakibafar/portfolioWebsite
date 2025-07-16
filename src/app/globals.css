@@ -104,7 +104,7 @@
 
 /* The main container for a page section */
 @utility section-container {
-  @apply bg-[#F7FEFF] py-16;
+  @apply py-16;
 }
 
 /* The inner, centered wrapper for section content */
@@ -137,12 +137,25 @@
   @apply mt-28 text-center;
 }
 
+
 body {
-  background: var(--background);
+  background-color: #F7FEFF;
+  position: relative;
   color: var(--foreground);
   font-family: var(--font-iran);
+  z-index: 1;
 }
 
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/bgPattern2.png');
+  background-size: 400px; 
+  background-repeat: repeat;
+  opacity: 0.03;
+  z-index: -1;
+}
 /* Keyframes remain the same */
 @keyframes slide-left {
   from {

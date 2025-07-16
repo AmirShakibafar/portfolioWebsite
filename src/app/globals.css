@@ -156,7 +156,15 @@ body::before {
   opacity: 0.03;
   z-index: -1;
 }
-/* Keyframes remain the same */
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @keyframes slide-left {
   from {
     transform: translateX(100vw);

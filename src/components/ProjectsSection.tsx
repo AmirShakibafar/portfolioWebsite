@@ -1,4 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import {
+  motion,
+  useInView,
+  useAnimationControls,
+  Variants,
+} from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import ShinyButton from "./ShinyButton";
 
@@ -58,31 +66,100 @@ const myProjects: ProjectCardProps[] = [
 ];
 
 const ProjectsSection = () => {
-  return (
-    <div className="section-container">
-      <div className="section-wrapper">
-        <h2 className="section-heading">
-          <span className="heading-brace">{"{"}</span>
-          <span>نمونه کارهای من</span>
-          <span className="heading-brace">{"}"}</span>
-        </h2>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const controls = useAnimationControls();
 
-        <div className="projects-grid">
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  // --- Animation Variants ---
+  const headingContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
+
+  const headingPartVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  };
+
+  const gridContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", damping: 15, stiffness: 100 },
+    },
+  };
+
+  const footerVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 1.2 } },
+  };
+
+  return (
+    <div ref={ref} className="section-container">
+      <div className="section-wrapper">
+        <motion.h2
+          className="section-heading"
+          variants={headingContainerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.span variants={headingPartVariants} className="heading-brace">
+            {"{"}
+          </motion.span>
+          <motion.span variants={headingPartVariants}>
+            نمونه کارهای من
+          </motion.span>
+          <motion.span variants={headingPartVariants} className="heading-brace">
+            {"}"}
+          </motion.span>
+        </motion.h2>
+
+        <motion.div
+          className="projects-grid"
+          variants={gridContainerVariants}
+          initial="hidden"
+          animate={controls}
+        >
           {myProjects.map((project, index) => (
-            <div
+            <motion.div
               key={project.projectName}
+              variants={cardVariants}
               className={`project-item ${
                 index % 2 === 0 ? "translate-y-20" : ""
               }`}
             >
               <ProjectCard {...project} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="section-footer">
+        <motion.div
+          className="section-footer"
+          variants={footerVariants}
+          initial="hidden"
+          animate={controls}
+        >
           <ShinyButton text="دیدن تمام پروژه هام" variant="secondary" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

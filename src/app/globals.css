@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7FEFF;
+  --background: #f7feff;
   --foreground: #171717;
 }
 
@@ -31,37 +31,133 @@
   @apply text-[#E50000] font-bold;
 }
 
-
 @utility btn {
   @apply px-6 py-6 rounded-full transition-all duration-300;
 }
-
 
 @utility btn-secondary {
   @apply btn border border-blue-600 text-blue-600 hover:bg-blue-50;
 }
 
+/*==============================================*/
+/* Project Card Utilities                       */
+/*==============================================*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* The main wrapper with the gradient border */
+@utility card-wrapper {
+  @apply max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg;
+}
+
+/* The inner white container that holds all content */
+@utility card-inner {
+  @apply bg-white rounded-[22px];
+}
+
+/* The padded area for the image */
+@utility card-image-container {
+  @apply p-3;
+}
+
+/* The image style itself */
+@utility card-image {
+  @apply w-full h-auto object-cover rounded-xl;
+}
+
+/* The container for all the text, icons, and button */
+@utility card-body {
+  @apply p-5 pt-2 text-right;
+}
+
+/* The header section for the title and year */
+@utility card-header {
+  @apply flex justify-between items-center;
+}
+
+/* The style for the project's title */
+@utility card-title {
+  @apply font-iran font-black text-2xl text-[#003772];
+}
+
+/* The style for the project's year */
+@utility card-year {
+  @apply font-bold text-2xl text-[#E50000];
+}
+
+/* The footer section for the tech stack and button */
+@utility card-footer {
+  @apply mt-4 flex flex-wrap justify-between items-center gap-y-4;
+}
+
+/* The container for the list of tech icons */
+@utility card-tech-stack {
+  @apply flex flex-wrap justify-start gap-x-3 text-3xl;
+}
+
+/* The hover effect for an individual tech icon */
+@utility card-tech-icon {
+  @apply transition-transform duration-300 hover:scale-125;
+}
+
+/*==============================================*/
+/* Projects Section Utilities                   */
+/*==============================================*/
+
+/* The main container for a page section */
+@utility section-container {
+  @apply bg-[#F7FEFF] py-16;
+}
+
+/* The inner, centered wrapper for section content */
+@utility section-wrapper {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* The main heading for a section */
+@utility section-heading {
+  @apply w-full text-[46px] font-extrabold text-blue-900 mb-12 flex justify-end items-center gap-x-3;
+}
+
+/* The red braces used in the heading */
+@utility heading-brace {
+  @apply text-red-500;
+}
+
+/* The flex container for the grid of project cards */
+@utility projects-grid {
+  @apply flex flex-wrap justify-center gap-x-10;
+}
+
+/* The wrapper for a single project card, including base animation styles */
+@utility project-item {
+  @apply mb-10 transform transition duration-300;
+}
+
+/* The container for the final button at the bottom of the section */
+@utility section-footer {
+  @apply mt-28 text-center;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-iran), sans-serif;
+  font-family: var(--font-iran);
 }
 
 /* Keyframes remain the same */
 @keyframes slide-left {
-  from { transform: translateX(100vw); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slide-right {
-  from { transform: translateX(-100vw); }
-  to { transform: translateX(100%); }
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }

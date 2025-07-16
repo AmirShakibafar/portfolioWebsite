@@ -17,7 +17,6 @@ const containerVariants: Variants = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.3,
-      // This line reverses the animation order to match the RTL layout
       staggerDirection: -1,
     },
   },

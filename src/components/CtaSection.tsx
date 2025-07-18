@@ -14,7 +14,7 @@ const containerVariants: Variants = {
 
 const CtaSection = () => {
   return (
-    <div className="section-container overflow-x-hidden bg-[#f8fdff]">
+    <div className="section-container overflow-x-hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -128,7 +128,6 @@ const SkillCategory = ({ title, skills, baseColor, icon }: SkillCategoryProps) =
 
 
 const SkillsSection = () => {
-  // --- Animation Variants ---
   const containerVariants: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.1 } },

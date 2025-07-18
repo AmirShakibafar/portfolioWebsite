@@ -1,3 +1,4 @@
+import CtaSection from "@/components/CtaSection";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import { RecomendationsSection } from "@/components/RecomendationsSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <ProjectsSection />
       <SkillsSection/>
       <RecomendationsSection/>
+      <CtaSection/>
     </>
   );
 }

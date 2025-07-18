@@ -1,4 +1,3 @@
-// components/ShinyButton.tsx
 "use client";
 
 import {
@@ -15,7 +14,6 @@ type ShinyButtonProps = {
   variant?: "primary" | "secondary";
   size?: "big" | "small";
 };
-
 
 function useShinyButtonAnimation() {
   const mouseX = useMotionValue(0);
@@ -39,18 +37,17 @@ function useShinyButtonAnimation() {
 export default function ShinyButton({
   text,
   variant = "primary",
-  size = "big", // Default size is 'big'
+  size = "big", 
 }: ShinyButtonProps) {
   const { handleMouseMove, borderStyle } = useShinyButtonAnimation();
 
-  // Conditional classes based on the variant prop
   const backgroundClass =
     variant === "primary"
       ? "bg-gradient-to-r from-[#003672] to-[#005BB9]"
-      : "bg-gradient-to-b from-white to-gray-200";
+      : "bg-gradient-to-b from-white to-gray-100";
 
   const textClass = variant === "primary" ? "text-white" : "text-[#003772]";
-  
+ 
   const sizeClasses = {
     container: size === 'big' ? 'h-14 px-8 py-8' : 'h-10 px-6 py-6',
     text: size === 'big' ? 'text-xl' : 'text-base',

@@ -13,6 +13,7 @@ type ShinyButtonProps = {
   text: string;
   variant?: "primary" | "secondary";
   size?: "big" | "small";
+  onClick?: () => void;
 };
 
 function useShinyButtonAnimation() {
@@ -38,6 +39,7 @@ export default function ShinyButton({
   text,
   variant = "primary",
   size = "big", 
+  onClick
 }: ShinyButtonProps) {
   const { handleMouseMove, borderStyle } = useShinyButtonAnimation();
 
@@ -56,6 +58,7 @@ export default function ShinyButton({
   return (
     <motion.button
       onMouseMove={handleMouseMove}
+      onClick={onClick} 
       className={`group relative inline-flex items-center justify-center overflow-hidden rounded-full text-lg font-medium transition-all duration-300 hover:shadow-[0_0_25px_#005BB9] ${sizeClasses.container}`}
     >
       <motion.div
@@ -70,4 +73,6 @@ export default function ShinyButton({
       </span>
     </motion.button>
   );
+
+  
 }

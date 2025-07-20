@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar"; // Import the Navbar
 import FooterSection from "@/components/FooterSection";
+import SocialLinks from "@/components/SocialLinks";
 
 const iranSans = localFont({
   src: [
@@ -35,8 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${iranSans.variable} antialiased`}>
         <Navbar />
+        <SocialLinks/>
         <main>{children}</main>
-        <FooterSection/>
+        <FooterSection data-theme="dark"/>
       </body>
     </html>
   );

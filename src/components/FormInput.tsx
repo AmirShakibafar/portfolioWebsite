@@ -13,7 +13,7 @@ export default function FormInput({
   ...props
 }: FormInputProps) {
   return (
-    <div className="group relative w-full rounded-[32px]">
+    <div className="group relative w-full rounded-[32px] font-iran">
       <div className="absolute -inset-[2px] rounded-[32px] bg-gradient-to-r from-[#003772] to-[#E50000]" />
       <Tag
         {...(props as any)}

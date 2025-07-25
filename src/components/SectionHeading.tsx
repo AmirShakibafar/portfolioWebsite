@@ -8,7 +8,7 @@ const itemVariants: Variants = {
 const SectionHeading = () => (
   <motion.h2
     variants={itemVariants}
-    className="text-4xl md:text-5xl font-extrabold text-center leading-tight"
+    className="text-4xl md:text-5xl font-iran font-extrabold text-center leading-tight"
   >
     <span className="text-[#003772]">خوشحال میشم که روی ایده‌های </span>
     <span className="text-red-600">جذابتون </span>

@@ -1,4 +1,3 @@
-// components/AboutHero.tsx
 "use client";
 
 import { motion, Variants } from "framer-motion";
@@ -6,10 +5,12 @@ import Image from "next/image";
 import AnimatedWords from "./AnimatedWords";
 import ShinyButton from "./ShinyButton";
 import React from "react";
-import {ShimmerText} from "./ShimmerText"
-
+import { ShimmerText } from "./ShimmerText";
+import { useShinyAnimation } from "@/hooks/useShinyAnimation"; // Adjust path if needed
 
 export default function AboutHero() {
+  const { handleMouseMove, borderStyle } = useShinyAnimation();
+
   const imageVariants: Variants = {
     hidden: { opacity: 0, x: -60 },
     visible: {
@@ -25,7 +26,6 @@ export default function AboutHero() {
         <h1 className="text-[48px] font-bold mb-6 text-blue-900 flex items-center justify-end">
           <AnimatedWords text="درباره‌ی من" direction="rtl" />
         </h1>
-
         <ShimmerText>
           من امیرم، یه توسعه‌دهنده‌ی فرانت‌اند که عاشق خلق تجربه‌های کاربری
           خلاق، جذاب و کاربردیه. کاری که ازش لذت می‌برم، تبدیل کردن ایده‌های
@@ -33,28 +33,34 @@ export default function AboutHero() {
           بچگی که اولین‌بار پای کامپیوتر نشستم، شوق ساختن توی وجودم بوده و هنوزم
           با همون انرژی و هیجان کد می‌زنم و دنبال چالش‌های جدید می‌گردم
         </ShimmerText>
-
         <div className="flex justify-end gap-4">
           <ShinyButton text="→ دیدن رزومه" variant="secondary" />
           <ShinyButton text="→ تماس با من" />
         </div>
       </div>
 
+      
       <motion.div
+        onMouseMove={handleMouseMove}
         variants={imageVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full max-w-[465px] mb-8 lg:mb-0"
+        className="group relative w-full max-w-[465px] h-[650px] mb-8 lg:mb-0 rounded-3xl"
       >
-        <Image
-          src="/images/aboutme.jpg"
-          alt="Profile"
-          width={465}
-          height={650}
-          className="rounded-3xl shadow-xl"
-          priority
+        <motion.div
+          className="absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={borderStyle}
         />
+        <div className="absolute inset-[2.5px] rounded-[22px] overflow-hidden">
+          <Image
+            src="/images/aboutme.jpg"
+            alt="Profile"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </motion.div>
     </section>
   );

@@ -165,6 +165,19 @@ body::before {
   scrollbar-width: none;  /* Firefox */
 }
 
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 10s linear infinite;
+}
+
 @keyframes slide-left {
   from {
     transform: translateX(100vw);

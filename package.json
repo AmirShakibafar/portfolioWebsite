@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "coolshapes-react": "^1.0.1",
     "gsap": "^3.13.0",
     "motion": "^12.23.5",
     "next": "15.3.5",

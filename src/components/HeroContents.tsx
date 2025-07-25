@@ -57,19 +57,14 @@ export default function HeroContent() {
 
   return (
     <>
-      <div
-        className="absolute top-0 start-0 h-full w-2/5 backdrop-blur-sm"
-        style={{
-          maskImage: "linear-gradient(to end, black 60%, transparent)",
-        }}
-      />
+      <div className="absolute top-0 start-0 h-full w-3/5 backdrop-blur-sm [mask-image:linear-gradient(to_right,rgba(0,0,0,0),rgba(0,0,0,1))]" />
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="flex items-center gap-8">
           <div className="flex flex-col p-6">
             <h1 className="hero-heading">
               <AnimatedWords text="!سلام" />
               <motion.div
-                className="flex justify-start" 
+                className="flex justify-start"
                 initial="hidden"
                 animate="visible"
                 transition={{ staggerChildren: 0.1 }}
@@ -82,7 +77,6 @@ export default function HeroContent() {
                 </motion.span>
                 <motion.span variants={headingChild}>هستم</motion.span>
                 <motion.span variants={headingChild}>:)</motion.span>
-
               </motion.div>
             </h1>
 

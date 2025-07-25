@@ -1,6 +1,6 @@
 // components/FormButton.tsx
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 type FormButtonProps = {
   text: string;
@@ -12,14 +12,37 @@ export default function FormButton({
   className = "",
   ...props
 }: FormButtonProps) {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // Get mouse position relative to the button element
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
   return (
     <button
       {...props}
-      className={`group relative flex h-14 items-center justify-center overflow-hidden rounded-[32px] text-xl font-medium transition-all duration-300 hover:shadow-[0_0_25px_#005BB9] ${className}`}
+      className={`form-btn ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="absolute -inset-[2px] rounded-[32px] bg-gradient-to-r from-[#003772] to-[#E50000]" />
-      <div className="absolute inset-[2px] rounded-[30px] bg-gradient-to-r from-[#003772] to-[#0068D8]" />
-      <span className="relative font-bold text-white">{text}</span>
+      <div className="form-btn-border" />
+      <div className="form-btn-bg" />
+      
+      {/* This is the shine element that follows the mouse */}
+      <div
+        className="form-btn-shine"
+        style={{
+          left: coords.x,
+          top: coords.y,
+          opacity: isHovering ? 1 : 0,
+        }}
+      />
+      
+      <span className="form-btn-text">{text}</span>
     </button>
   );
 }

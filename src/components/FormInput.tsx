@@ -2,13 +2,12 @@
 "use client";
 import React from "react";
 
-// Prop types for the component
 type FormInputProps = {
   as?: "input" | "textarea";
 } & React.InputHTMLAttributes<HTMLInputElement> &
   React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-// The Input Component
+
 export default function FormInput({
   as: Tag = "input",
   ...props

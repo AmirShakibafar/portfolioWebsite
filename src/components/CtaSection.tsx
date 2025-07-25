@@ -26,7 +26,7 @@ const CtaSection = () => {
           <div className="text-center py-16">
             <SectionHeading />
 
-            <div className="flex flex-col lg:flex-row-reverse gap-16 items-start justify-center max-w-7xl mx-auto mt-12">
+            <div className="contact-section-layout">
               <AuthorInfo />
               <ContactForm />
             </div>

@@ -101,6 +101,11 @@ body::before {
   @apply mb-10 transform transition duration-300;
 }
 
+/* --- Contact Section --- */
+@utility contact-section-layout {
+  @apply flex flex-col lg:flex-row-reverse gap-16 items-start justify-center max-w-7xl mx-auto mt-12;
+}
+
 /*
 |--------------------------------------------------------------------------
 | 4. Component Utilities
@@ -151,6 +156,64 @@ body::before {
 }
 @utility card-tech-icon {
   @apply transition-transform duration-300 hover:scale-125;
+}
+
+/* --- Author Info --- */
+@utility author-info-wrapper {
+  @apply w-full max-w-[480px] text-right;
+}
+@utility author-info-header {
+  @apply flex items-center justify-between mb-4;
+}
+@utility author-status-badge {
+  @apply font-iran flex items-center gap-2 bg-teal-100 text-teal-800 text-sm font-medium px-3 py-2 rounded-full;
+}
+@utility author-status-indicator {
+  @apply relative flex h-2 w-2;
+}
+@utility author-status-ping {
+  @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75;
+}
+@utility author-status-dot {
+  @apply relative inline-flex rounded-full h-2 w-2 bg-teal-500;
+}
+@utility author-id-wrapper {
+  @apply flex items-center gap-3;
+}
+@utility author-name {
+  @apply font-iran font-bold text-lg text-[#003772];
+}
+@utility author-image {
+  @apply rounded-full object-cover w-14 h-14 border-2 border-white/50;
+}
+@utility author-bio {
+  @apply font-iran text-slate-700 leading-loose;
+}
+@utility author-socials-wrapper {
+  @apply mt-6 flex justify-end gap-6 text-gray-500;
+}
+@utility author-social-link {
+  @apply hover:text-[#005BB9] transition-colors;
+}
+
+/* --- Footer Section --- */
+@utility footer-container {
+  @apply relative w-full h-[85vh] lg:h-screen overflow-hidden bg-[#24DAFE];
+}
+@utility footer-bg-gradient {
+  @apply absolute inset-0 z-0 bg-gradient-to-b from-[#f7feff] to-[#24DAFE];
+}
+@utility footer-parallax-layer {
+  @apply absolute inset-0 w-full h-full pointer-events-none;
+}
+@utility footer-parallax-image {
+  @apply object-cover object-bottom;
+}
+@utility footer-content-wrapper {
+  @apply absolute bottom-5 left-0 right-0 z-50 flex flex-col md:flex-row items-center justify-center gap-4 px-4 text-center;
+}
+@utility footer-credits-text {
+  @apply font-iran text-white font-bold text-sm md:text-base drop-shadow-md;
 }
 
 /*

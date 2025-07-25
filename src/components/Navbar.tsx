@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { name: "صفحه اصلی", href: "/" },
   { name: "درباره من", href: "/about" },
-  { name: "رزومه", href: "/resume" },
-  { name: "تماس", href: "/contact" },
+  { name: "رزومه", href: "/about/#resume" },
+  { name: "تماس", href: "/#contact" },
 ];
 
 const containerVariants: Variants = {

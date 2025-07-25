@@ -74,7 +74,7 @@ export default function ResumeSection() {
   const englishResumePath = "/resumes/AmirShakibafar_Resume_EN.pdf";
 
   return (
-    <section className="section-container">
+    <section id="resume" className="section-container">
       <div className="section-wrapper">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
           <div className="relative">

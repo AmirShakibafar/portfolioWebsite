@@ -5,22 +5,23 @@ import Navbar from "@/components/Navbar"; // Import the Navbar
 import FooterSection from "@/components/FooterSection";
 import SocialLinks from "@/components/SocialLinks";
 
-const iranSans = localFont({
+const iranYekan = localFont({
   src: [
-    { path: "./fonts/IranSansX/IRANSansX-Thin.ttf", weight: "100" },
-    { path: "./fonts/IranSansX/IRANSansX-UltraLight.ttf", weight: "200" },
-    { path: "./fonts/IranSansX/IRANSansX-Light.ttf", weight: "300" },
-    { path: "./fonts/IranSansX/IRANSansX-Regular.ttf", weight: "400" },
-    { path: "./fonts/IranSansX/IRANSansX-Medium.ttf", weight: "500" },
-    { path: "./fonts/IranSansX/IRANSansX-DemiBold.ttf", weight: "600" },
-    { path: "./fonts/IranSansX/IRANSansX-Bold.ttf", weight: "700" },
-    { path: "./fonts/IranSansX/IRANSansX-ExtraBold.ttf", weight: "800" },
-    { path: "./fonts/IranSansX/IRANSansX-Black.ttf", weight: "900" },
-    { path: "./fonts/IranSansX/IRANSansX-ExtraBlack.ttf", weight: "950" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Thin.ttf", weight: "100" },
+    { path: "./fonts/IranYekanX/IRANYekanX-UltraLight.ttf", weight: "200" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Light.ttf", weight: "300" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Regular.ttf", weight: "400" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Medium.ttf", weight: "500" },
+    { path: "./fonts/IranYekanX/IRANYekanX-DemiBold.ttf", weight: "600" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Bold.ttf", weight: "700" },
+    { path: "./fonts/IranYekanX/IRANYekanX-ExtraBold.ttf", weight: "800" },
+    { path: "./fonts/IranYekanX/IRANYekanX-Black.ttf", weight: "900" },
+    { path: "./fonts/IranYekanX/IRANYekanX-ExtraBlack.ttf", weight: "950" },
   ],
-  variable: "--font-iran",
+  variable: "--font-yekan",
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${iranSans.variable} antialiased`}>
+      <body className={`${iranYekan.variable} antialiased`}>
         <Navbar />
         <SocialLinks/>
         <main>{children}</main>

@@ -9,7 +9,10 @@ import ContactForm from "./ContactForm";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, ease: "easeOut" },
+  },
 };
 
 const CtaSection = () => {
@@ -27,8 +30,8 @@ const CtaSection = () => {
             <SectionHeading />
 
             <div className="contact-section-layout">
-              <AuthorInfo />
               <ContactForm />
+              <AuthorInfo />
             </div>
           </div>
         </div>

@@ -139,13 +139,12 @@ const ProjectsSection = () => {
           initial="hidden"
           animate={controls}
         >
-          {myProjects.map((project, index) => (
+          {myProjects.map((project) => (
             <motion.div
               key={project.projectName}
               variants={cardVariants}
-              className={`project-item ${
-                index % 2 === 0 ? "translate-y-20" : ""
-              }`}
+            
+              className="project-item rtl:even:translate-y-20 ltr:odd:translate-y-20"
             >
               <ProjectCard {...project} />
             </motion.div>

@@ -61,9 +61,19 @@ export const RecomendationsSection = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={sectionVariants}
       >
-        <FaQuoteRight className="recommendations-bg-quote" />
+        {/* The quote icon is now positioned to the start (right in RTL) */}
+        <FaQuoteRight className="absolute -top-8 start-0 text-[20rem] text-blue-500/5 -z-0" />
 
         <motion.div variants={itemVariants} className="recommendations-grid">
+          {/* The text content is now first in the DOM to appear on the right in RTL */}
+          <div className="recommendations-text-content">
+            <h2 className="recommendations-heading">دیگران چه می‌گویند؟</h2>
+            <p className="recommendations-subheading">
+              نگاهی به نظرات همکاران و کارفرمایان
+            </p>
+          </div>
+
+          {/* The carousel is second to appear on the left in RTL */}
           <div className="lg:col-span-2">
             <div
               ref={containerRef}
@@ -98,12 +108,6 @@ export const RecomendationsSection = () => {
                 />
               ))}
             </div>
-          </div>
-          <div className="recommendations-text-content">
-            <h2 className="recommendations-heading">دیگران چه می‌گویند؟</h2>
-            <p className="recommendations-subheading">
-              نگاهی به نظرات همکاران و کارفرمایان
-            </p>
           </div>
         </motion.div>
       </motion.div>

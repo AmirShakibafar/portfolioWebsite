@@ -1,15 +1,14 @@
-'use client';
-import { motion, Variants } from 'framer-motion';
-import React from 'react';
+"use client";
+
+import { motion, Variants } from "framer-motion";
+import React from "react";
 
 const AnimatedWords = ({
   text,
   className = "",
-  direction = "ltr",
 }: {
   text: string;
   className?: string;
-  direction?: "ltr" | "rtl";
 }) => {
   const words = text.split(" ");
 
@@ -36,22 +35,17 @@ const AnimatedWords = ({
 
   return (
     <motion.div
-      className={`flex flex-wrap overflow-hidden ${
-        direction === "rtl" ? "flex-row-reverse" : ""
-      } ${className}`}
+      // The `direction` prop and conditional flex-row-reverse are no longer needed.
+      className={`flex flex-wrap overflow-hidden ${className}`}
       variants={container}
       initial="hidden"
       animate="visible"
     >
       {words.map((word, index) => (
         <motion.span
-          variants={child}
-          style={
-            direction === "rtl"
-              ? { marginLeft: "0.25em" }
-              : { marginRight: "0.25em" }
-          }
           key={index}
+          variants={child}
+          className="me-1"
         >
           {word}
         </motion.span>

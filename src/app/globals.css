@@ -4,10 +4,6 @@
 |--------------------------------------------------------------------------
 | 1. Setup & Theming
 |--------------------------------------------------------------------------
-|
-| This section defines root CSS variables and registers them with
-| Tailwind's theme system using the @theme directive.
-|
 */
 
 :root {
@@ -25,10 +21,6 @@
 |--------------------------------------------------------------------------
 | 2. Base & Global Styles
 |--------------------------------------------------------------------------
-|
-| Base styles applied to the body and other global elements. Includes
-| the background pattern setup.
-|
 */
 
 body {
@@ -54,9 +46,6 @@ body::before {
 |--------------------------------------------------------------------------
 | 3. Layout Utilities
 |--------------------------------------------------------------------------
-|
-| Utilities for structuring major page layouts, sections, and grids.
-|
 */
 
 /* --- General Sections --- */
@@ -67,7 +56,7 @@ body::before {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 @utility section-heading {
-  @apply font-iran w-full text-[46px] font-extrabold text-blue-900 mb-12 flex justify-end items-center gap-x-3;
+  @apply font-iran w-full text-[46px] font-extrabold text-blue-900 mb-12 flex justify-start items-center gap-x-3;
 }
 @utility heading-brace {
   @apply font-iran text-red-500;
@@ -76,21 +65,38 @@ body::before {
   @apply font-iran mt-28 text-center;
 }
 
+/* --- Navbar --- */
+@utility nav-header {
+  @apply absolute top-0 z-50 w-full p-4;
+}
+@utility nav-container {
+  @apply flex-row-reverse justify-start px-[200px] py-5;
+}
+@utility nav-list {
+  @apply flex items-center gap-8 font-iran;
+}
+@utility nav-link {
+  @apply font-iran font-bold transition-colors text-[22px] text-[#003772] hover:text-[#E50000];
+}
+@utility nav-link-active {
+  @apply text-[#E50000];
+}
+
 /* --- Hero Section --- */
 @utility hero-text-content {
   @apply font-iran flex flex-col justify-center backdrop-blur-sm bg-white/10;
 }
 @utility hero-heading {
-  @apply font-iran text-[64px] text-blue-900 text-right font-bold;
+  @apply font-iran text-[64px] text-blue-900 text-start font-bold;
 }
 @utility hero-subheading {
-  @apply font-iran mt-4 text-[28px] text-blue-900 text-right font-semibold;
+  @apply font-iran mt-4 text-[28px] text-blue-900 text-start font-semibold;
 }
 @utility hero-paragraph {
-  @apply font-iran mt-4 text-[24px] text-[#003772] text-right font-medium;
+  @apply font-iran mt-4 text-[24px] text-[#003772] text-start font-medium;
 }
 @utility hero-highlight {
-  @apply text-[#E50000] font-bold; /* Inherits font-iran from parent */
+  @apply text-[#E50000] font-bold;
 }
 
 /* --- Projects Grid --- */
@@ -110,9 +116,6 @@ body::before {
 |--------------------------------------------------------------------------
 | 4. Component Utilities
 |--------------------------------------------------------------------------
-|
-| Styles for individual, reusable UI components like buttons and cards.
-|
 */
 
 /* --- Buttons --- */
@@ -137,7 +140,7 @@ body::before {
   @apply w-full h-auto object-cover rounded-xl;
 }
 @utility card-body {
-  @apply font-iran p-5 pt-2 text-right;
+  @apply font-iran p-5 pt-2 text-end;
 }
 @utility card-header {
   @apply font-iran flex justify-between items-center;
@@ -163,16 +166,16 @@ body::before {
   @apply p-6;
 }
 @utility skills-section-heading {
-  @apply font-iran text-[42px] font-bold text-blue-800 mb-12 text-right;
+  @apply font-iran text-[42px] font-bold text-blue-800 mb-12 text-end;
 }
 @utility skills-section-grid {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-right;
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-end;
 }
 @utility skills-section-image-container {
   @apply flex justify-center items-center h-full;
 }
 @utility skills-section-image-glow {
-  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-yellow-400/30 rounded-full blur-[128px] -z-10;
+  @apply absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-yellow-400/30 rounded-full blur-[128px] -z-10;
 }
 @utility skills-section-image {
   @apply w-[400px] h-auto relative z-10;
@@ -189,13 +192,13 @@ body::before {
   @apply absolute inset-0 rounded-full blur-3xl;
 }
 @utility skill-category-heading {
-  @apply font-iran text-3xl font-bold mb-4 flex justify-end items-center gap-3;
+  @apply font-iran text-3xl font-bold mb-4 flex justify-start items-center gap-3;
 }
 @utility skill-category-title {
   @apply bg-gradient-to-r bg-clip-text text-transparent;
 }
 @utility skill-category-list {
-  @apply flex flex-wrap gap-2 justify-end;
+  @apply flex flex-wrap gap-2 justify-start;
 }
 @utility skill-pill {
   @apply font-iran flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold cursor-pointer;
@@ -209,7 +212,7 @@ body::before {
   @apply relative overflow-hidden;
 }
 @utility recommendations-bg-quote {
-  @apply absolute -top-8 right-0 text-[20rem] text-blue-500/5 -z-0;
+  @apply absolute -top-8 end-0 text-[20rem] text-blue-500/5 -z-0;
 }
 @utility recommendations-grid {
   @apply grid grid-cols-1 lg:grid-cols-3 gap-12 items-center relative z-10;
@@ -230,7 +233,7 @@ body::before {
   @apply w-3 h-3 rounded-full transition-colors;
 }
 @utility recommendations-text-content {
-  @apply text-right lg:col-span-1;
+  @apply text-end lg:col-span-1;
 }
 @utility recommendations-heading {
   @apply font-iran text-4xl font-extrabold bg-gradient-to-r from-[#003772] to-[#0068D8] bg-clip-text text-transparent;
@@ -247,13 +250,13 @@ body::before {
   @apply relative flex flex-col justify-between h-full p-6 bg-white backdrop-blur-lg rounded-[14px] overflow-hidden;
 }
 @utility rec-card-bg-quote {
-  @apply absolute top-4 right-4 text-7xl text-slate-200/50;
+  @apply absolute top-4 end-4 text-7xl text-slate-200/50;
 }
 @utility rec-card-quote {
-  @apply font-iran text-slate-700 text-right leading-relaxed text-lg;
+  @apply font-iran text-slate-700 text-end leading-relaxed text-lg;
 }
 @utility rec-card-footer {
-  @apply relative z-10 flex justify-end items-center gap-4 mt-6 pt-4;
+  @apply relative z-10 flex justify-start items-center gap-4 mt-6 pt-4;
 }
 @utility rec-card-author-link {
   @apply font-iran inline-flex items-center gap-2 text-slate-800 hover:text-sky-600 font-bold transition-colors;
@@ -284,7 +287,7 @@ body::before {
 
 /* --- Author Info --- */
 @utility author-info-wrapper {
-  @apply w-full max-w-[480px] text-right;
+  @apply w-full max-w-[480px] text-end;
 }
 @utility author-info-header {
   @apply flex items-center justify-between mb-4;
@@ -314,7 +317,7 @@ body::before {
   @apply font-iran text-slate-700 leading-loose;
 }
 @utility author-socials-wrapper {
-  @apply mt-6 flex justify-end gap-6 text-gray-500;
+  @apply mt-6 flex justify-start gap-6 text-gray-500;
 }
 @utility author-social-link {
   @apply hover:text-[#005BB9] transition-colors;
@@ -322,7 +325,6 @@ body::before {
 
 /* --- Form Button --- */
 @utility form-btn {
-  /* Added overflow-hidden to contain the shine effect */
   @apply relative flex h-14 items-center justify-center overflow-hidden rounded-[32px] text-xl font-medium;
 }
 @utility form-btn-border {
@@ -332,7 +334,6 @@ body::before {
   @apply absolute inset-[2px] rounded-[30px] bg-gradient-to-r from-[#003772] to-[#0068D8];
 }
 @utility form-btn-shine {
-  /* This utility styles the moving light source */
   @apply absolute -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full pointer-events-none transition-opacity duration-500;
   background: radial-gradient(
     circle,
@@ -343,6 +344,33 @@ body::before {
 }
 @utility form-btn-text {
   @apply relative font-iran font-bold text-white;
+}
+
+
+/* --- About Hero Section --- */
+@utility about-hero-section {
+  @apply relative flex font-iran flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden;
+}
+@utility about-hero-content {
+  @apply max-w-3xl lg:ms-12;
+}
+@utility about-hero-heading {
+  @apply text-[48px] font-bold mb-6 text-blue-900 flex items-center justify-start;
+}
+@utility about-hero-buttons {
+  @apply flex justify-start gap-4;
+}
+@utility about-hero-image-frame {
+  @apply relative w-full max-w-[465px] h-[650px] mb-8 lg:mb-0 rounded-3xl;
+}
+@utility about-hero-image-border {
+  @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+}
+@utility about-hero-image-inner {
+  @apply absolute inset-[2.5px] rounded-[22px] overflow-hidden;
+}
+@utility about-hero-image {
+  @apply object-cover;
 }
 
 /* --- Footer Section --- */
@@ -359,19 +387,30 @@ body::before {
   @apply object-cover object-bottom;
 }
 @utility footer-content-wrapper {
-  @apply absolute bottom-5 left-0 right-0 z-50 flex flex-col md:flex-row items-center justify-center gap-4 px-4 text-center;
+  @apply absolute bottom-5 inset-x-0 z-50 flex flex-col md:flex-row items-center justify-center gap-4 px-4 text-center;
 }
 @utility footer-credits-text {
   @apply font-iran text-white font-bold text-sm md:text-base drop-shadow-md;
+}
+
+/* --- Shiny Button --- */
+@utility shiny-btn-container {
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 hover:shadow-[0_0_25px_#005BB9];
+}
+@utility shiny-btn-border {
+  @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+}
+@utility shiny-btn-bg {
+  @apply absolute inset-[2.5px] rounded-full;
+}
+@utility shiny-btn-text {
+  @apply relative font-bold;
 }
 
 /*
 |--------------------------------------------------------------------------
 | 5. Animations
 |--------------------------------------------------------------------------
-|
-| Keyframe definitions and their corresponding utility classes.
-|
 */
 
 @keyframes animate-gradient {
@@ -420,9 +459,6 @@ body::before {
 |--------------------------------------------------------------------------
 | 6. Helper Utilities
 |--------------------------------------------------------------------------
-|
-| Small, single-purpose helper classes for specific tasks.
-|
 */
 
 .hide-scrollbar::-webkit-scrollbar {

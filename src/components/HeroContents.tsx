@@ -30,7 +30,7 @@ export default function HeroContent() {
   const imageVariants: Variants = {
     hidden: {
       opacity: 0,
-      x: "-50vw",
+      x: "-50vw", // Fly in from off-screen left
       scale: 0.8,
     },
     flyIn: {
@@ -42,7 +42,6 @@ export default function HeroContent() {
         ease: "circOut",
       },
     },
-
     float: {
       y: [0, -12, 5, -12, 0],
       x: [0, 5, -5, 5, 0],
@@ -59,13 +58,60 @@ export default function HeroContent() {
   return (
     <>
       <div
-        className="absolute top-0 right-0 h-full w-2/5 backdrop-blur-sm"
+        className="absolute top-0 start-0 h-full w-2/5 backdrop-blur-sm"
         style={{
-          maskImage: "linear-gradient(to left, black 60%, transparent)",
+          maskImage: "linear-gradient(to end, black 60%, transparent)",
         }}
       />
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="flex items-center gap-8">
+          <div className="flex flex-col p-6">
+            <h1 className="hero-heading">
+              <AnimatedWords text="!سلام" />
+              <motion.div
+                className="flex justify-start" 
+                initial="hidden"
+                animate="visible"
+                transition={{ staggerChildren: 0.1 }}
+              >
+                <motion.span
+                  variants={headingChild}
+                  className="text-red-500 mx-2"
+                >
+                  امیر
+                </motion.span>
+                <motion.span variants={headingChild}>هستم</motion.span>
+                <motion.span variants={headingChild}>:)</motion.span>
+
+              </motion.div>
+            </h1>
+
+            <AnimatedWords
+              text="کارم طراحی و توسعه محصولات دیجیتال جذاب و کاربرپسنده"
+              className="hero-subheading"
+            />
+
+            <p className="hero-paragraph">
+              <span className="hero-highlight">
+                +<AnimatedNumber value={1.5} decimals={1} />
+              </span>{" "}
+              سال سابقه |{" "}
+              <span className="hero-highlight">
+                <AnimatedNumber value={4} />
+              </span>{" "}
+              پروژه واقعی |{" "}
+              <span className="hero-highlight">
+                +<AnimatedNumber value={36} />
+              </span>{" "}
+              استار گیت‌هاب
+            </p>
+
+            <div className="mt-10 flex justify-start gap-4">
+              <ShinyButton text="دیدن نمونه کارهام →" variant="secondary" />
+              <ShinyButton text="تماس با من →" />
+            </div>
+          </div>
+
           <motion.div
             variants={imageVariants}
             initial="hidden"
@@ -79,53 +125,6 @@ export default function HeroContent() {
               className="[transform:translateZ(50px)]"
             />
           </motion.div>
-
-          <div className="flex flex-col p-6">
-            <h1 className="hero-heading">
-              <AnimatedWords text="!سلام" direction="rtl" />
-              <motion.div
-                className="flex-row-reverse justify-end"
-                initial="hidden"
-                animate="visible"
-                transition={{ staggerChildren: 0.1 }}
-              >
-                <motion.span variants={headingChild}>(:</motion.span>
-                <motion.span
-                  variants={headingChild}
-                  className="text-red-500 mx-2"
-                >
-                  امیر
-                </motion.span>
-                <motion.span variants={headingChild}>هستم</motion.span>
-              </motion.div>
-            </h1>
-
-            <AnimatedWords
-              text="کارم طراحی و توسعه محصولات دیجیتال جذاب و کاربرپسنده"
-              className="hero-subheading"
-              direction="rtl"
-            />
-
-            <p className="hero-paragraph" dir="rtl">
-              <span className="text-[#E50000] font-bold">
-                +<AnimatedNumber value={1.5} decimals={1} />
-              </span>{" "}
-              سال سابقه |{" "}
-              <span className="text-[#E50000] font-bold">
-                <AnimatedNumber value={4} />
-              </span>{" "}
-              پروژه واقعی |{" "}
-              <span className="text-[#E50000] font-bold">
-                +<AnimatedNumber value={36} />
-              </span>{" "}
-              استار گیت‌هاب
-            </p>
-
-            <div className="mt-10 flex justify-end gap-4">
-              <ShinyButton text="→ دیدن نمونه کارهام" variant="secondary" />
-              <ShinyButton text="→ تماس با من" />
-            </div>
-          </div>
         </div>
       </div>
     </>

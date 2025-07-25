@@ -35,16 +35,11 @@ export default function ShinyButton({
     <motion.button
       onMouseMove={handleMouseMove}
       onClick={onClick}
-      className={`group relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 hover:shadow-[0_0_25px_#005BB9] ${sizeClasses.container} ${className}`}
+      className={`shiny-btn-container group ${sizeClasses.container} ${className}`}
     >
-      <motion.div
-        className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={borderStyle}
-      />
-      <div
-        className={`absolute inset-[2.5px] rounded-full ${backgroundClass}`}
-      />
-      <span className={`relative font-bold ${textClass} ${sizeClasses.text}`}>
+      <motion.div className="shiny-btn-border" style={borderStyle} />
+      <div className={`shiny-btn-bg ${backgroundClass}`} />
+      <span className={`shiny-btn-text ${textClass} ${sizeClasses.text}`}>
         {text}
       </span>
     </motion.button>

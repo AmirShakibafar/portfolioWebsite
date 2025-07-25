@@ -6,13 +6,13 @@ import AnimatedWords from "./AnimatedWords";
 import ShinyButton from "./ShinyButton";
 import React from "react";
 import { ShimmerText } from "./ShimmerText";
-import { useShinyAnimation } from "@/hooks/useShinyAnimation"; // Adjust path if needed
+import { useShinyAnimation } from "@/hooks/useShinyAnimation";
 
 export default function AboutHero() {
   const { handleMouseMove, borderStyle } = useShinyAnimation();
 
   const imageVariants: Variants = {
-    hidden: { opacity: 0, x: -60 },
+    hidden: { opacity: 0, x: 60 }, // Fades in from the right
     visible: {
       opacity: 1,
       x: 0,
@@ -21,10 +21,10 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="relative flex flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden">
-      <div className="max-w-3xl lg:mr-12">
-        <h1 className="text-[48px] font-bold mb-6 text-blue-900 flex items-center justify-end">
-          <AnimatedWords text="درباره‌ی من" direction="rtl" />
+    <section className="about-hero-section">
+      <div className="about-hero-content">
+        <h1 className="about-hero-heading">
+          <AnimatedWords text="درباره‌ی من" />
         </h1>
         <ShimmerText>
           من امیرم، یه توسعه‌دهنده‌ی فرانت‌اند که عاشق خلق تجربه‌های کاربری
@@ -33,31 +33,27 @@ export default function AboutHero() {
           بچگی که اولین‌بار پای کامپیوتر نشستم، شوق ساختن توی وجودم بوده و هنوزم
           با همون انرژی و هیجان کد می‌زنم و دنبال چالش‌های جدید می‌گردم
         </ShimmerText>
-        <div className="flex justify-end gap-4">
+        <div className="about-hero-buttons">
           <ShinyButton text="→ دیدن رزومه" variant="secondary" />
           <ShinyButton text="→ تماس با من" />
         </div>
       </div>
 
-      
       <motion.div
         onMouseMove={handleMouseMove}
         variants={imageVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="group relative w-full max-w-[465px] h-[650px] mb-8 lg:mb-0 rounded-3xl"
+        className="about-hero-image-frame group"
       >
-        <motion.div
-          className="absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={borderStyle}
-        />
-        <div className="absolute inset-[2.5px] rounded-[22px] overflow-hidden">
+        <motion.div className="about-hero-image-border" style={borderStyle} />
+        <div className="about-hero-image-inner">
           <Image
             src="/images/aboutme.jpg"
             alt="Profile"
             fill
-            className="object-cover"
+            className="about-hero-image"
             priority
           />
         </div>

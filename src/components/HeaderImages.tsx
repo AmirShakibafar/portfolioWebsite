@@ -6,17 +6,16 @@ const HeaderImages = () => (
   <div className="header-images-container">
     <div className="header-image-wrapper">
       <Image
-        src="/images/left-crowd-cta.png"
-        alt="Crowd of characters on the left"
+        src="/images/right-crowd-cta.png"
+        alt="Crowd of characters on the right"
         width={400}
         height={400}
         className="header-image"
       />
-      <div className="header-image-bubble top-5 right-5">
-        مطمئنم قراره چیزای جذابی باهم بسازن
+      <div className="header-image-bubble top-5 end-5">
+        خدای من چه تیم خفنی شدن!!
       </div>
     </div>
-
     <div className="header-image-wrapper">
       <Image
         src="/images/cta-image.png"
@@ -26,17 +25,17 @@ const HeaderImages = () => (
         className="header-image"
       />
     </div>
-
     <div className="header-image-wrapper">
       <Image
-        src="/images/right-crowd-cta.png"
-        alt="Crowd of characters on the right"
+        src="/images/left-crowd-cta.png"
+        alt="Crowd of characters on the left"
         width={400}
         height={400}
         className="header-image"
       />
-      <div className="header-image-bubble top-5 left-5">
-        خدای من چه تیم خفنی شدن!!
+
+      <div className="header-image-bubble top-5 start-5">
+        مطمئنم قراره چیزای جذابی باهم بسازن
       </div>
     </div>
   </div>

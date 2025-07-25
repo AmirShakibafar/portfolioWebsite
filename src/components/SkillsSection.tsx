@@ -199,31 +199,7 @@ const SkillsSection = () => {
             className="skills-section-grid"
             variants={containerVariants}
           >
-            <motion.div
-              variants={imageVariant}
-              className="skills-section-image-container"
-            >
-              <div className="relative">
-                <div className="skills-section-image-glow" />
-                <Image
-                  src="/images/skills-img.png"
-                  alt="Superhero Character"
-                  width={400}
-                  height={400}
-                  className="skills-section-image"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <SkillCategory
-                title="توسعه فرانت‌اند"
-                skills={frontendSkills}
-                baseColor="blue"
-                icon={<FaCode />}
-              />
-            </motion.div>
-
+            {/* Column 1 (Visually on the Right) */}
             <motion.div
               variants={itemVariants}
               className="skills-section-right-column"
@@ -240,6 +216,33 @@ const SkillsSection = () => {
                 baseColor="gray"
                 icon={<FaTools />}
               />
+            </motion.div>
+
+            {/* Column 2 (Visually in the Middle) */}
+            <motion.div variants={itemVariants}>
+              <SkillCategory
+                title="توسعه فرانت‌اند"
+                skills={frontendSkills}
+                baseColor="blue"
+                icon={<FaCode />}
+              />
+            </motion.div>
+
+            {/* Column 3 (Visually on the Left) */}
+            <motion.div
+              variants={imageVariant}
+              className="skills-section-image-container"
+            >
+              <div className="relative">
+                <div className="skills-section-image-glow" />
+                <Image
+                  src="/images/skills-img.png"
+                  alt="Superhero Character"
+                  width={400}
+                  height={400}
+                  className="skills-section-image"
+                />
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>

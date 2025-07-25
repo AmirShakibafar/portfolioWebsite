@@ -1,13 +1,14 @@
 "use client";
+
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { name: "تماس", href: "/contact" },
-  { name: "رزومه", href: "/resume" },
-  { name: "درباره من", href: "/about" },
   { name: "صفحه اصلی", href: "/" },
+  { name: "درباره من", href: "/about" },
+  { name: "رزومه", href: "/resume" },
+  { name: "تماس", href: "/contact" },
 ];
 
 const containerVariants: Variants = {
@@ -31,10 +32,10 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="absolute top-0 z-50 w-full p-4">
-      <nav className="flex justify-end px-[200px] py-5">
+    <header className="nav-header">
+      <nav className="nav-container">
         <motion.ul
-          className="flex items-center gap-8 font-iran"
+          className="nav-list"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -51,11 +52,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`font-iran font-bold transition-colors text-[22px] ${
-                      isActive
-                        ? "text-[#E50000]"
-                        : "text-[#003772] hover:text-[#E50000]"
-                    }`}
+                    className={`nav-link ${isActive ? "nav-link-active" : ""}`}
                   >
                     {link.name}
                   </Link>

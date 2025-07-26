@@ -67,7 +67,7 @@ body::before {
 
 /* --- Navbar --- */
 @utility nav-header {
-  @apply absolute top-0 z-50 w-full p-4;
+  @apply fixed top-0 z-50 w-full p-4;
 }
 @utility nav-container {
   @apply flex-row-reverse justify-start px-[200px] py-5;

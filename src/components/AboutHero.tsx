@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"; // Import the Link component
 import AnimatedWords from "./AnimatedWords";
 import ShinyButton from "./ShinyButton";
 import React from "react";
@@ -12,7 +13,7 @@ export default function AboutHero() {
   const { handleMouseMove, borderStyle } = useShinyAnimation();
 
   const imageVariants: Variants = {
-    hidden: { opacity: 0, x: 60 }, // Fades in from the right
+    hidden: { opacity: 0, x: 60 },
     visible: {
       opacity: 1,
       x: 0,
@@ -34,8 +35,14 @@ export default function AboutHero() {
           با همون انرژی و هیجان کد می‌زنم و دنبال چالش‌های جدید می‌گردم
         </ShimmerText>
         <div className="about-hero-buttons">
-          <ShinyButton text="→ دیدن رزومه" variant="secondary" />
-          <ShinyButton text="→ تماس با من" />
+          {/* Wrap the "Resume" button with a Link */}
+          <Link href="/about#resume">
+            <ShinyButton text="→ دیدن رزومه" variant="secondary" />
+          </Link>
+          {/* Wrap the "Contact" button with a Link */}
+          <Link href="/about#contact">
+            <ShinyButton text="→ تماس با من" />
+          </Link>
         </div>
       </div>
 

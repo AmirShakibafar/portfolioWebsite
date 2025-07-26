@@ -35,7 +35,6 @@ const AnimatedWords = ({
 
   return (
     <motion.div
-      // The `direction` prop and conditional flex-row-reverse are no longer needed.
       className={`flex flex-wrap overflow-hidden ${className}`}
       variants={container}
       initial="hidden"

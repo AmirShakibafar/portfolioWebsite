@@ -192,7 +192,6 @@ const SkillsSection = () => {
           <AnimatedWords
             text="⭐ توانایی‌هام چیه؟"
             className="skills-section-heading"
-            direction="rtl"
           />
 
           <motion.div

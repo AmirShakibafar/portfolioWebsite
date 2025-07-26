@@ -114,7 +114,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <div ref={ref} className="section-container">
+    <div ref={ref} id="projects" className="section-container">
       <div className="section-wrapper">
         <motion.h2
           className="section-heading"

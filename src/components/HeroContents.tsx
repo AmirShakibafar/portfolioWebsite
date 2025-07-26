@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants, useAnimationControls } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import AnimatedWords from "./AnimatedWords";
 import AnimatedNumber from "./AnimatedNumber";
 import ShinyButton from "./ShinyButton";
@@ -101,8 +102,12 @@ export default function HeroContent() {
             </p>
 
             <div className="mt-10 flex justify-start gap-4">
-              <ShinyButton text="دیدن نمونه کارهام →" variant="secondary" />
-              <ShinyButton text="تماس با من →" />
+              <Link href="#projects">
+                <ShinyButton text="دیدن نمونه کارهام →" variant="secondary" />
+              </Link>
+              <Link href="#contact">
+                <ShinyButton text="تماس با من →" />
+              </Link>
             </div>
           </div>
 

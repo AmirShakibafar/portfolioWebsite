@@ -150,11 +150,7 @@ export default function Navbar() {
                       );
                     })}
                   </motion.ul>
-                  <div className="mt-auto w-full">
-                    <Link href="/#contact" onClick={closeMenu}>
-                      <ShinyButton text="ارتباط با من" className="w-full" />
-                    </Link>
-                  </div>
+                  
                 </motion.div>
               )}
             </AnimatePresence>

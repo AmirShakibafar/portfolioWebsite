@@ -88,7 +88,7 @@ p {
   @apply font-iran text-red-500;
 }
 @utility section-footer {
-  @apply font-iran mt-28 text-center;
+  @apply font-iran mt-2 text-center lg:mt-28;
 }
 
 /* --- Navbar (Updated) --- */
@@ -123,7 +123,7 @@ p {
   @apply flex flex-col p-8;
 }
 @utility mobile-nav-list {
-  @apply flex flex-col items-end text-end gap-8 pt-24;
+  @apply flex flex-col items-start text-end gap-8 pt-24;
 }
 
 /* --- Hero Section --- */
@@ -146,7 +146,7 @@ p {
   @apply font-iran text-blue-900 text-start lg:text-start font-bold w-full;
 }
 @utility hero-subheading {
-  @apply font-iran mt-4  text-blue-900 text-start lg:text-start font-semibold w-full;
+  @apply font-iran mt-4 text-[clamp(1rem,1rem+1.5vw,2.25rem)] text-blue-900 text-start lg:text-start font-semibold w-full;
 }
 @utility hero-paragraph {
   @apply font-iran mt-4  text-[#003772] text-start lg:text-start font-medium w-full;
@@ -222,7 +222,7 @@ p {
   @apply p-6;
 }
 @utility skills-section-heading {
-  @apply font-iran text-[42px] font-bold text-blue-800 mb-12 text-end;
+  @apply font-iran font-extrabold text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] mb-4 text-blue-900 text-start lg:text-start w-full;;
 }
 @utility skills-section-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 items-start;
@@ -410,7 +410,7 @@ p {
   @apply relative flex font-iran flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden;
 }
 @utility about-hero-content {
-  @apply w-[clamp(28rem,60vw,48rem)] lg:ms-12;
+  @apply w-[clamp(20rem,60vw,48rem)] lg:ms-12;
 }
 @utility about-hero-heading {
   @apply text-[48px] font-bold mb-6 text-blue-900 flex items-center justify-start;
@@ -473,16 +473,16 @@ p {
 
 /* --- Shiny Button --- */
 @utility shiny-btn-container {
-  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 hover:shadow-[0_0_25px_#005BB9] h-[clamp(2.75rem,2.25rem+2.1vw,3.5rem)] px-[clamp(1.5rem,1rem+2.1vw,2.25rem)];
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 shadow-[0_0_25px_#005BB9] md:shadow-none md:hover:shadow-[0_0_25px_#005BB9] h-[clamp(3rem,2.5rem+2.5vw,4rem)] px-[clamp(1.5rem,1rem+2vw,2.5rem)];
 }
 @utility shiny-btn-border {
-  @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+  @apply absolute inset-0 rounded-full transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100;
 }
 @utility shiny-btn-bg {
   @apply absolute inset-[2.5px] rounded-full;
 }
 @utility shiny-btn-text {
-  @apply relative font-bold text-[clamp(0.9rem,0.75rem+0.65vw,1.1rem)] whitespace-nowrap;
+  @apply relative font-bold text-[clamp(0.9rem,0.7rem+0.85vw,1.25rem)] whitespace-nowrap;
 }
 /*
 |--------------------------------------------------------------------------

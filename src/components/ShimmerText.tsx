@@ -3,13 +3,15 @@ import React from "react";
 interface ShimmerTextProps {
   children: React.ReactNode;
   size?: string | number;
+  mobileSize?: string | number;
   color?: string;
   shimmerColor?: string;
 }
 
 export const ShimmerText = ({
   children,
-  size = "24px",
+  size = "16px",
+  mobileSize = "16px",
   color = "#334155",
   shimmerColor = "#e2e8f0",
 }: ShimmerTextProps) => {

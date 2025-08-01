@@ -27,7 +27,7 @@ export default function AboutHero() {
         <h1 className="about-hero-heading">
           <AnimatedWords text="درباره‌ی من" />
         </h1>
-        <ShimmerText>
+        <ShimmerText size={20}>
           من امیرم، یه توسعه‌دهنده‌ی فرانت‌اند که عاشق خلق تجربه‌های کاربری
           خلاق، جذاب و کاربردیه. کاری که ازش لذت می‌برم، تبدیل کردن ایده‌های
           باحال به محصولاتی واقعیه که هم چشم‌گیر باشن و هم به‌درد بخورن. از همون

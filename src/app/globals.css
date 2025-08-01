@@ -39,7 +39,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/images/bgPattern2.png");
+  background-image: url("/images/bgPattern2.avif");
   background-size: 400px;
   background-repeat: repeat;
   opacity: 0.03;
@@ -190,7 +190,7 @@ p {
   @apply bg-white rounded-[22px] flex flex-col h-full;
 }
 @utility card-image-container {
-  @apply p-3;
+  @apply relative p-3 aspect-video;
 }
 @utility card-image {
   @apply w-full h-auto object-cover rounded-xl;
@@ -445,7 +445,6 @@ p {
   @apply hover:text-[#005BB9] transition-colors;
 }
 
-
 /* --- About Hero Section --- */
 @utility about-hero-section {
   @apply relative flex font-iran flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden;
@@ -477,7 +476,7 @@ p {
   @apply flex flex-col-reverse lg:flex-row items-center justify-center gap-12 lg:gap-24;
 }
 @utility resume-text-content {
-  @apply flex flex-col h-auto font-iran lg:items-end relative z-10;
+  @apply flex flex-col h-auto font-iran lg:items-start relative z-10;
 }
 @utility resume-heading {
   @apply text-[48px] font-extrabold bg-gradient-to-r from-[#003672] to-[#005BB9] bg-clip-text text-transparent;

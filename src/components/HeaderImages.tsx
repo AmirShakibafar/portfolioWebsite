@@ -6,7 +6,7 @@ const HeaderImages = () => (
   <div className="header-images-container">
     <div className="header-image-wrapper header-image-side">
       <Image
-        src="/images/right-crowd-cta.png"
+        src="/images/right-crowd-cta.avif"
         alt="Crowd of characters on the right"
         fill
         sizes="(max-width: 768px) 25vw, 400px"
@@ -18,7 +18,7 @@ const HeaderImages = () => (
     </div>
     <div className="header-image-wrapper header-image-center">
       <Image
-        src="/images/cta-image.png"
+        src="/images/cta-image.avif"
         alt="Central call to action image"
         fill
         sizes="(max-width: 768px) 40vw, 600px"
@@ -27,7 +27,7 @@ const HeaderImages = () => (
     </div>
     <div className="header-image-wrapper header-image-side">
       <Image
-        src="/images/left-crowd-cta.png"
+        src="/images/left-crowd-cta.avif"
         alt="Crowd of characters on the left"
         fill
         sizes="(max-width: 768px) 25vw, 400px"

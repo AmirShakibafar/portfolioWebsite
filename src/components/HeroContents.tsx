@@ -1,62 +1,11 @@
-"use client";
-
-import { motion, Variants, useAnimationControls } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import AnimatedWords from "./AnimatedWords";
 import AnimatedNumber from "./AnimatedNumber";
 import ShinyButton from "./ShinyButton";
-import React, { useEffect, FC } from "react";
+import HeroImage from "./HeroImage";
+import HeroHeadingClient from "./HeroHeadingClient";
 
-const HeroContent: FC = () => {
-  const headingChild: Variants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", damping: 12, stiffness: 100 },
-    },
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-  };
-
-  const controls = useAnimationControls();
-
-  useEffect(() => {
-    controls.start("flyIn").then(() => {
-      controls.start("float");
-    });
-  }, [controls]);
-
-  const imageVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      x: "-50vw",
-      scale: 0.8,
-    },
-    flyIn: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "circOut",
-      },
-    },
-    float: {
-      y: [0, -12, 5, -12, 0],
-      x: [0, 5, -5, 5, 0],
-      rotate: [0, -1.5, 1.5, -1.5, 0],
-      transition: {
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "mirror",
-        ease: "easeInOut",
-      },
-    },
-  };
-
+export default function HeroContent() {
   return (
     <>
       <div className="hero-blur-effect" />
@@ -64,22 +13,7 @@ const HeroContent: FC = () => {
         <div className="hero-layout-container">
           <div className="hero-text-wrapper">
             <h1 className="hero-heading">
-              <AnimatedWords text="!سلام" />
-              <motion.div
-                className="flex justify-start"
-                initial="hidden"
-                animate="visible"
-                transition={{ staggerChildren: 0.1 }}
-              >
-                <motion.span
-                  variants={headingChild}
-                  className="text-red-500 mx-2"
-                >
-                  امیر
-                </motion.span>
-                <motion.span variants={headingChild}>هستم</motion.span>
-                <motion.span variants={headingChild}>:)</motion.span>
-              </motion.div>
+              <HeroHeadingClient />
             </h1>
 
             <AnimatedWords
@@ -112,24 +46,9 @@ const HeroContent: FC = () => {
             </div>
           </div>
 
-          <motion.div
-            className="hero-image-wrapper"
-            variants={imageVariants}
-            initial="hidden"
-            animate={controls}
-          >
-            <Image
-              src="/images/hero_image.png"
-              alt="Superhero Amir"
-              fill
-              priority
-              className="object-cover"
-            />
-          </motion.div>
+          <HeroImage />
         </div>
       </div>
     </>
   );
-};
-
-export default HeroContent;
+}

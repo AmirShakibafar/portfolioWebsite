@@ -53,7 +53,7 @@ export default function ResumeSection() {
           >
             <div className="resume-image-glow" />
             <Image
-              src="/images/resume.png"
+              src="/images/resume.avif"
               alt="A preview of the resume"
               width={800}
               height={1120}

@@ -91,7 +91,7 @@ const SkillsSection = () => {
                   src={
                     showMobileLayout
                       ? "/images/skillsForMobile.png"
-                      : "/images/skills-img.png"
+                      : "/images/skills-img.avif"
                   }
                   alt="Superhero Character"
                   fill

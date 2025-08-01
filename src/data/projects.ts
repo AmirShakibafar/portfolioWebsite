@@ -11,9 +11,9 @@ export type Project = {
 };
 export const myProjects: Project[] = [
   {
-    devImageSrc: "/images/project.png",
+    devImageSrc: "/images/project.avif",
     images: [
-      "/images/project.png",
+      "/images/project.avif",
       "/images/project-2.png",
       "/images/project-3.png",
     ],
@@ -25,9 +25,9 @@ export const myProjects: Project[] = [
       "یک وب اپلیکیشن مدرن با استفاده از جدیدترین تکنولوژی‌ها برای ارائه تجربه کاربری بی‌نظیر. این پروژه شامل داشبورد تحلیلی و مدیریت محتوا است.",
   },
   {
-    devImageSrc: "/images/project.png",
+    devImageSrc: "/images/project.avif",
     images: [
-      "/images/project.png",
+      "/images/project.avif",
       "/images/project-2.png",
       "/images/project-3.png",
     ],
@@ -39,9 +39,9 @@ export const myProjects: Project[] = [
       "طراحی و توسعه یک وب‌سایت شرکتی حرفه‌ای با تمرکز بر هویت بصری و بهینه‌سازی برای موتورهای جستجو (SEO).",
   },
   {
-    devImageSrc: "/images/project.png",
+    devImageSrc: "/images/project.avif",
     images: [
-      "/images/project.png",
+      "/images/project.avif",
       "/images/project-2.png",
       "/images/project-3.png",
     ],
@@ -53,9 +53,9 @@ export const myProjects: Project[] = [
       "داشبورد مدیریتی قدرتمند برای تحلیل داده‌ها و نظارت بر عملکرد با استفاده از نمودارها و گزارش‌های تعاملی.",
   },
   {
-    devImageSrc: "/images/project.png",
+    devImageSrc: "/images/project.avif",
     images: [
-      "/images/project.png",
+      "/images/project.avif",
       "/images/project-2.png",
       "/images/project-3.png",
     ],

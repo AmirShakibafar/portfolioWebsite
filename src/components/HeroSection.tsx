@@ -1,7 +1,11 @@
 "use client";
-import Clouds from "./Clouds";
-import HeroContents from "./HeroContents";
+import dynamic from "next/dynamic";
+import HeroContent from "./HeroContents";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+
+const Clouds = dynamic(() => import("./Clouds"), {
+  ssr: false,
+});
 
 export default function HeroSection() {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
@@ -12,7 +16,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full flex items-center justify-center bg-gradient-to-b from-[#59E1FD] from-60% to-[#f7feff00] overflow-hidden py-16">
       <Clouds count={cloudCount} />
-      <HeroContents />
+      <HeroContent />
     </section>
   );
 }

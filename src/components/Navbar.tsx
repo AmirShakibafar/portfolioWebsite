@@ -63,7 +63,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Effect to prevent scrolling when the mobile menu is open
   useEffect(() => {
     if (isOpen && !isDesktop) {
       document.body.style.overflow = "hidden";
@@ -106,7 +105,6 @@ export default function Navbar() {
           })}
         </motion.ul>
 
-        {/* Mobile Navigation */}
         {!isDesktop && (
           <>
             <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />

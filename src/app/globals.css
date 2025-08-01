@@ -132,12 +132,14 @@ body::before {
   @apply text-[#E50000] font-bold;
 }
 
-/* --- Projects Grid --- */
+/* --- Projects Grid (Updated) --- */
 @utility projects-grid {
-  @apply flex flex-wrap justify-center gap-x-10;
+  /* Switched to CSS Grid for explicit column control */
+  @apply grid grid-cols-1 md:grid-cols-2 justify-items-center gap-10;
 }
 @utility project-item {
-  @apply mb-10 transform transition duration-300;
+  /* Removed transition for an instant effect */
+  @apply mb-10 transform;
 }
 
 /* --- Contact Section --- */
@@ -161,10 +163,11 @@ body::before {
 
 /* --- Project Cards --- */
 @utility card-wrapper {
-  @apply max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg;
+  @apply max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg h-full;
 }
 @utility card-inner {
-  @apply bg-white rounded-[22px];
+  /* Added flex properties and h-full */
+  @apply bg-white rounded-[22px] flex flex-col h-full;
 }
 @utility card-image-container {
   @apply p-3;
@@ -173,19 +176,21 @@ body::before {
   @apply w-full h-auto object-cover rounded-xl;
 }
 @utility card-body {
-  @apply font-iran p-5 pt-2 text-end;
+  /* Added flex properties to grow and manage children */
+  @apply font-iran p-5 pt-2 text-end flex flex-col flex-grow;
 }
 @utility card-header {
   @apply font-iran flex justify-between items-center;
 }
 @utility card-title {
-  @apply font-iran font-black text-2xl text-[#003772];
+  /* Added block and truncate to prevent text wrapping */
+  @apply font-iran font-black text-2xl text-[#003772] block truncate;
 }
 @utility card-year {
   @apply font-iran font-bold text-2xl text-[#E50000];
 }
 @utility card-footer {
-  @apply mt-4 flex flex-wrap justify-between items-center gap-y-4;
+  @apply mt-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-4 pt-4;
 }
 @utility card-tech-stack {
   @apply flex flex-wrap justify-start gap-x-3 text-3xl;

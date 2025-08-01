@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import ShinyButton from "./ShinyButton";
-import ProjectModal from "./ProjectModal"; // Import the new modal
+import ProjectModal from "./ProjectModal";
 
 // Expanded project data with descriptions and multiple images
 const myProjects = [
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
                 index={index}
                 {...project}
                 onClick={() => setSelectedProject(project)}
-                className="project-item rtl:odd:translate-y-20 ltr:odd:translate-y-20"
+                className="project-item lg:rtl:odd:translate-y-20 lg:ltr:odd:translate-y-20"
               />
             ))}
           </div>

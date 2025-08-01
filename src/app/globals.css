@@ -69,21 +69,38 @@ body::before {
   @apply font-iran mt-28 text-center;
 }
 
-/* --- Navbar --- */
+/* --- Navbar (Updated) --- */
 @utility nav-header {
-  @apply fixed top-0 z-50 w-full p-4;
+  @apply fixed top-0 z-[60] w-full py-4 transition-all duration-300 ease-in-out;
+}
+@utility nav-header-scrolled {
+  @apply bg-gradient-to-b from-white/70 from-10% to-transparent backdrop-blur-lg;
 }
 @utility nav-container {
-  @apply flex-row-reverse justify-start px-[200px] py-5;
+  @apply flex items-center px-[16.5px] md:px-8 lg:px-[200px] h-12;
 }
 @utility nav-list {
-  @apply flex items-center gap-8 font-iran;
+  @apply hidden lg:flex items-center gap-8 font-iran me-auto;
 }
 @utility nav-link {
   @apply font-iran font-bold transition-colors text-[22px] text-[#003772] hover:text-[#E50000];
 }
 @utility nav-link-active {
   @apply text-[#E50000];
+}
+/* --- Hamburger Menu --- */
+@utility hamburger-button {
+  @apply lg:hidden z-[70] transform scale-125 ml-auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@utility mobile-menu-panel {
+  @apply fixed top-0 start-0 bottom-0 z-[60] w-full max-w-xs bg-white/80 backdrop-blur-xl shadow-2xl;
+  @apply flex flex-col p-8;
+}
+@utility mobile-nav-list {
+  @apply flex flex-col items-start text-start gap-8 pt-24;
 }
 
 /* --- Hero Section --- */

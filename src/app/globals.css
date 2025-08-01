@@ -271,7 +271,7 @@ body::before {
   @apply w-3 h-3 rounded-full transition-colors;
 }
 @utility recommendations-text-content {
-  @apply text-end lg:col-span-1;
+  @apply text-start;
 }
 @utility recommendations-heading {
   @apply font-iran text-4xl font-extrabold bg-gradient-to-r from-[#003772] to-[#0068D8] bg-clip-text text-transparent;

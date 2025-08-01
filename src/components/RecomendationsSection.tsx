@@ -1,44 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, Variants, useInView } from "framer-motion";
 import { FaQuoteRight } from "react-icons/fa";
 import { recommendationsData } from "@/data/recommendations";
-import { RecommendationCard } from "./RecommendationCard";
+import { RecommendationsCarousel } from "./RecommendationsCarousel";
 
-export const RecomendationsSection = () => {
-  const [index, setIndex] = useState(0);
-  const [trackOffset, setTrackOffset] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const sectionRef = useRef(null);
+export default function RecommendationsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
-  useEffect(() => {
-    const calculateOffset = () => {
-      if (containerRef.current && cardRefs.current[index]) {
-        const container = containerRef.current;
-        const card = cardRefs.current[index]!;
-        const offset =
-          container.offsetWidth / 2 - card.offsetLeft - card.offsetWidth / 2;
-        setTrackOffset(offset);
-      }
-    };
-
-    calculateOffset();
-    window.addEventListener("resize", calculateOffset);
-    return () => window.removeEventListener("resize", calculateOffset);
-  }, [index]);
-
-  useEffect(() => {
-    if (isInView) {
-      const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % recommendationsData.length);
-      }, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [isInView]);
 
   const sectionVariants: Variants = {
     hidden: { opacity: 0 },
@@ -72,43 +43,12 @@ export const RecomendationsSection = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-2">
-            <div
-              ref={containerRef}
-              className="recommendations-carousel-container"
-            >
-              <motion.div
-                className="recommendations-carousel-track"
-                animate={{ x: trackOffset }}
-                transition={{ type: "spring", stiffness: 150, damping: 25 }}
-              >
-                {recommendationsData.map((rec, i) => (
-                  <div
-                    key={i}
-                    ref={(el) => (cardRefs.current[i] = el)}
-                    className="recommendations-carousel-item"
-                  >
-                    <RecommendationCard {...rec} isActive={i === index} />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-            <div className="recommendations-pagination-wrapper">
-              {recommendationsData.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIndex(i)}
-                  className={`recommendations-pagination-dot ${
-                    index === i
-                      ? "bg-blue-600"
-                      : "bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+          <RecommendationsCarousel
+            data={recommendationsData}
+            isInView={isInView}
+          />
         </motion.div>
       </motion.div>
     </div>
   );
-};
+}

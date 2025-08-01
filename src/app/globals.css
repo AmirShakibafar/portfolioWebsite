@@ -144,7 +144,7 @@ body::before {
 
 /* --- Contact Section --- */
 @utility contact-section-layout {
-  @apply flex flex-col lg:flex-row-reverse gap-16 items-start justify-center max-w-7xl mx-auto mt-12;
+  @apply flex flex-col-reverse lg:flex-row-reverse gap-16 items-center justify-center max-w-7xl mx-auto mt-12;
 }
 
 /*
@@ -311,16 +311,19 @@ body::before {
 
 /* --- Header Images --- */
 @utility header-images-container {
-  @apply flex w-full flex-wrap justify-center lg:justify-between items-center;
+  @apply flex w-full flex-nowrap justify-between items-end;
 }
 @utility header-image-wrapper {
-  @apply relative;
+  @apply relative flex-shrink;
 }
-@utility header-image {
-  @apply object-cover;
+@utility header-image-side {
+  @apply w-[clamp(250px,25vw,400px)] aspect-square;
+}
+@utility header-image-center {
+  @apply w-[clamp(400px,40vw,600px)] aspect-[600/360];
 }
 @utility header-image-bubble {
-  @apply font-iran absolute bg-white rounded-xl px-5 py-3 text-base font-medium shadow-lg text-[#003772];
+  @apply hidden lg:block font-iran absolute bg-white rounded-xl px-5 py-3 font-medium shadow-lg text-[#003772] text-[clamp(0.625rem,1.5vw,1rem)] whitespace-nowrap;
 }
 
 /* --- Author Info --- */

@@ -4,36 +4,35 @@ import React from "react";
 
 const HeaderImages = () => (
   <div className="header-images-container">
-    <div className="header-image-wrapper">
+    <div className="header-image-wrapper header-image-side">
       <Image
         src="/images/right-crowd-cta.png"
         alt="Crowd of characters on the right"
-        width={400}
-        height={400}
-        className="header-image"
+        fill
+        sizes="(max-width: 768px) 25vw, 400px"
+        className="object-contain"
       />
       <div className="header-image-bubble top-5 end-5">
         خدای من چه تیم خفنی شدن!!
       </div>
     </div>
-    <div className="header-image-wrapper">
+    <div className="header-image-wrapper header-image-center">
       <Image
         src="/images/cta-image.png"
         alt="Central call to action image"
-        width={600}
-        height={360}
-        className="header-image"
+        fill
+        sizes="(max-width: 768px) 40vw, 600px"
+        className="object-contain"
       />
     </div>
-    <div className="header-image-wrapper">
+    <div className="header-image-wrapper header-image-side">
       <Image
         src="/images/left-crowd-cta.png"
         alt="Crowd of characters on the left"
-        width={400}
-        height={400}
-        className="header-image"
+        fill
+        sizes="(max-width: 768px) 25vw, 400px"
+        className="object-contain"
       />
-
       <div className="header-image-bubble top-5 start-5">
         مطمئنم قراره چیزای جذابی باهم بسازن
       </div>

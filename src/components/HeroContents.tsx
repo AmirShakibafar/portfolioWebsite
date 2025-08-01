@@ -1,16 +1,14 @@
 "use client";
+
 import { motion, Variants, useAnimationControls } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedWords from "./AnimatedWords";
 import AnimatedNumber from "./AnimatedNumber";
 import ShinyButton from "./ShinyButton";
-import React, { useEffect } from "react";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import React, { useEffect, FC } from "react";
 
-export default function HeroContent() {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-
+const HeroContent: FC = () => {
   const headingChild: Variants = {
     visible: {
       opacity: 1,
@@ -72,7 +70,6 @@ export default function HeroContent() {
                 initial="hidden"
                 animate="visible"
                 transition={{ staggerChildren: 0.1 }}
-                viewport={{ once: true, amount: 0.25 }}
               >
                 <motion.span
                   variants={headingChild}
@@ -107,35 +104,32 @@ export default function HeroContent() {
 
             <div className="hero-buttons-container">
               <Link href="#projects">
-                <ShinyButton
-                  text="دیدن نمونه کارهام →"
-                  variant="secondary"
-                  // The size prop is removed
-                />
+                <ShinyButton text="دیدن نمونه کارهام →" variant="secondary" />
               </Link>
               <Link href="#contact">
-                <ShinyButton
-                  text="تماس با من →"
-                  // The size prop is removed
-                />
+                <ShinyButton text="تماس با من →" />
               </Link>
             </div>
           </div>
 
           <motion.div
             className="hero-image-wrapper"
-            viewport={{ once: true, amount: 0.25 }}
+            variants={imageVariants}
+            initial="hidden"
+            animate={controls}
           >
             <Image
               src="/images/hero_image.png"
               alt="Superhero Amir"
               fill
               priority
-              className="object-cover [transform:translateZ(50px)]"
+              className="object-cover"
             />
           </motion.div>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default HeroContent;

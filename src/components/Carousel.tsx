@@ -5,15 +5,23 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Carousel({ images, projectName }) {
+// Define the types for the component's props
+type CarouselProps = {
+  images: string[];
+  projectName: string;
+};
+
+export default function Carousel({ images, projectName }: CarouselProps) {
   const [index, setIndex] = useState(0);
 
-  const nextSlide = (e) => {
+  // Add type for the event object
+  const nextSlide = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const prevSlide = (e) => {
+  // Add type for the event object
+  const prevSlide = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIndex((prev) => (prev === 0 ? images.length - 1 : prev + 1));
   };

@@ -9,43 +9,8 @@ import {
   Variants,
 } from "framer-motion";
 import ShinyButton from "./ShinyButton";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaBootstrap,
-  FaJs,
-  FaFigma,
-  FaSass,
-  FaGitAlt,
-  FaNpm,
-} from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiRedux,
-  SiNextdotjs,
-  SiTypescript,
-  SiAxios,
-} from "react-icons/si";
-
-const techIconMap = {
-  HTML5: <FaHtml5 title="HTML5" className="text-orange-600" />,
-  CSS3: <FaCss3Alt title="CSS3" className="text-blue-600" />,
-  JavaScript: <FaJs title="JavaScript" className="text-yellow-400" />,
-  React: <FaReact title="React" className="text-sky-400" />,
-  TailwindCSS: <SiTailwindcss title="Tailwind CSS" className="text-cyan-400" />,
-  Bootstrap: <FaBootstrap title="Bootstrap" className="text-purple-700" />,
-  Redux: <SiRedux title="Redux" className="text-purple-500" />,
-  NextJs: <SiNextdotjs title="Next.js" className="text-black" />,
-  Figma: <FaFigma title="Figma" className="text-pink-500" />,
-  Axios: <SiAxios title="Axios" className="text-purple-600" />,
-  TypeScript: <SiTypescript title="TypeScript" className="text-blue-500" />,
-  Sass: <FaSass title="Sass" className="text-pink-400" />,
-  Git: <FaGitAlt title="Git" className="text-orange-700" />,
-  Npm: <FaNpm title="npm" className="text-red-500" />,
-};
-
-type TechName = keyof typeof techIconMap;
+import { techIconMap, TechName } from "@/data/skills";
+import { ArrowUpRight } from "react-feather";
 
 type ProjectCardProps = {
   devImageSrc: string;
@@ -64,7 +29,6 @@ const ProjectCard = ({
   projectYear,
   techStack,
   websiteUrl,
-  index,
   className,
   onClick,
 }: ProjectCardProps) => {
@@ -121,7 +85,7 @@ const ProjectCard = ({
               <div className="card-tech-stack">
                 {techStack.map((tech) => (
                   <div key={tech} className="card-tech-icon">
-                    {techIconMap[tech]}
+                    {techIconMap[tech]?.icon}
                   </div>
                 ))}
               </div>
@@ -132,7 +96,9 @@ const ProjectCard = ({
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ShinyButton text="رفتن به وب‌سایت" size="small" />
+                <ShinyButton text="رفتن به وب‌سایت">
+                  <ArrowUpRight className="ms-2" size={16} />
+                </ShinyButton>
               </a>
             </div>
           </div>

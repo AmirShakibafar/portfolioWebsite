@@ -5,7 +5,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import ShinyButton from "./ShinyButton";
+
 
 const navLinks = [
   { name: "صفحه اصلی", href: "/" },

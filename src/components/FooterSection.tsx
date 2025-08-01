@@ -104,7 +104,7 @@ export default function FooterSection(props: React.ComponentProps<"footer">) {
           طراحی شده با ❤️ در دل شب‌های کدنویسی
         </p>
         <a href="#top">
-          <ShinyButton text="بازگشت به بالا" size="small" />
+          <ShinyButton text="بازگشت به بالا"/>
         </a>
       </div>
     </footer>

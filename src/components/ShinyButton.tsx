@@ -1,21 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 import React from "react";
 import { useShinyAnimation } from "@/hooks/useShinyAnimation";
 
 type ShinyButtonProps = {
   text: string;
   variant?: "primary" | "secondary";
-  onClick?: () => void;
-  className?: string;
-};
+  children?: React.ReactNode;
+} & HTMLMotionProps<"button">;
 
 export default function ShinyButton({
   text,
   variant = "primary",
-  onClick,
+  children,
   className = "",
+  ...props
 }: ShinyButtonProps) {
   const { handleMouseMove, borderStyle } = useShinyAnimation();
 
@@ -27,13 +27,16 @@ export default function ShinyButton({
 
   return (
     <motion.button
+      {...props}
       onMouseMove={handleMouseMove}
-      onClick={onClick}
       className={`shiny-btn-container group ${className}`}
     >
       <motion.div className="shiny-btn-border" style={borderStyle} />
       <div className={`shiny-btn-bg ${backgroundClass}`} />
-      <span className={`shiny-btn-text ${textClass}`}>{text}</span>
+      <span className={`shiny-btn-text ${textClass}`}>
+        {text}
+        {children}
+      </span>
     </motion.button>
   );
 }

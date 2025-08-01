@@ -445,28 +445,6 @@ p {
   @apply hover:text-[#005BB9] transition-colors;
 }
 
-/* --- Form Button --- */
-@utility form-btn {
-  @apply relative flex h-14 items-center justify-center overflow-hidden rounded-[32px] text-xl font-medium;
-}
-@utility form-btn-border {
-  @apply absolute -inset-[2px] rounded-[32px] bg-gradient-to-r from-[#003772] to-[#E50000];
-}
-@utility form-btn-bg {
-  @apply absolute inset-[2px] rounded-[30px] bg-gradient-to-r from-[#003772] to-[#0068D8];
-}
-@utility form-btn-shine {
-  @apply absolute -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full pointer-events-none transition-opacity duration-500;
-  background: radial-gradient(
-    circle,
-    theme(colors.white/0.5) 0%,
-    transparent 80%
-  );
-  filter: blur(20px);
-}
-@utility form-btn-text {
-  @apply relative font-iran font-bold text-white;
-}
 
 /* --- About Hero Section --- */
 @utility about-hero-section {
@@ -545,7 +523,7 @@ p {
   @apply absolute inset-[2.5px] rounded-full;
 }
 @utility shiny-btn-text {
-  @apply relative font-bold text-[clamp(0.9rem,0.7rem+0.85vw,1.25rem)] whitespace-nowrap;
+  @apply relative font-bold inline-flex items-center justify-center gap-x-2 text-[clamp(0.9rem,0.75rem+0.65vw,1.1rem)] whitespace-nowrap;
 }
 /*
 |--------------------------------------------------------------------------

@@ -105,3 +105,5 @@ export const techIconMap = {
   Git: { icon: <FaGitAlt className="text-orange-700" />, name: "Git" },
   Npm: { icon: <FaNpm className="text-red-500" />, name: "npm" },
 };
+
+export type TechName = keyof typeof techIconMap;

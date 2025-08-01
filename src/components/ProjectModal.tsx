@@ -4,10 +4,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 import { techIconMap } from "@/data/skills";
+import { Project } from "@/data/projects";
 import ShinyButton from "./ShinyButton";
 import Carousel from "./Carousel";
 
-export default function ProjectModal({ project, onClose }) {
+type ProjectModalProps = {
+  project: Project;
+  onClose: () => void;
+};
+
+export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   return (
     <motion.div
       className="modal-backdrop"

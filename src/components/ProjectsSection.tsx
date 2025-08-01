@@ -107,7 +107,7 @@ const ProjectsSection = () => {
     <>
       <div ref={ref} id="projects" className="section-container">
         <div className="section-wrapper">
-          <motion.h2
+          <motion.h1
             className="section-heading"
             variants={headingContainerVariants}
             initial="hidden"
@@ -128,7 +128,7 @@ const ProjectsSection = () => {
             >
               {"}"}
             </motion.span>
-          </motion.h2>
+          </motion.h1>
 
           <div className="projects-grid">
             {myProjects.map((project, index) => (

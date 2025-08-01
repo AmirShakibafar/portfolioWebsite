@@ -14,7 +14,6 @@ const navLinks = [
   { name: "تماس", href: "/#contact" },
 ];
 
-// ... (variants declarations remain the same) ...
 const desktopContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,10 +25,12 @@ const desktopContainerVariants: Variants = {
     },
   },
 };
+
 const desktopLinkVariants: Variants = {
   hidden: { y: -20, opacity: 0 },
   visible: { y: 0, opacity: 1 },
 };
+
 const mobileMenuVariants: Variants = {
   open: { x: 0, transition: { type: "spring", stiffness: 200, damping: 30 } },
   closed: {
@@ -42,6 +43,7 @@ const mobileMenuVariants: Variants = {
     },
   },
 };
+
 const mobileLinkVariants: Variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 0, x: 50 },
@@ -61,11 +63,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Effect to prevent scrolling when the mobile menu is open
+  useEffect(() => {
+    if (isOpen && !isDesktop) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, isDesktop]);
+
   const closeMenu = () => setIsOpen(false);
 
   return (
     <header
-      className={`nav-header ${hasScrolled ? "nav-header-scrolled" : ""}`}
+      className={`nav-header ${
+        hasScrolled && !isOpen ? "nav-header-scrolled" : ""
+      }`}
     >
       <nav className="nav-container">
         {/* Desktop Navigation */}

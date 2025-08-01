@@ -46,6 +46,28 @@ body::before {
   z-index: -1;
 }
 
+/* New Base Typography Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-iran text-[#003772];
+}
+
+h1 {
+  @apply font-extrabold text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] mb-4;
+}
+
+h2 {
+  @apply font-bold text-[clamp(1.25rem,1rem+1vw,2.25rem)] mb-3;
+}
+
+p {
+  @apply text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] leading-loose;
+}
+
 /*
 |--------------------------------------------------------------------------
 | 3. Layout Utilities
@@ -95,12 +117,13 @@ body::before {
   border: none;
   cursor: pointer;
 }
+
 @utility mobile-menu-panel {
-  @apply fixed top-0 start-0 bottom-0 z-[60] w-full max-w-xs bg-white/80 backdrop-blur-xl shadow-2xl;
+  @apply fixed top-0 start-0 bottom-0 z-[65] w-full max-w-xs bg-white/80 backdrop-blur-xl shadow-2xl;
   @apply flex flex-col p-8;
 }
 @utility mobile-nav-list {
-  @apply flex flex-col items-start text-start gap-8 pt-24;
+  @apply flex flex-col items-end text-end gap-8 pt-24;
 }
 
 /* --- Hero Section --- */
@@ -120,31 +143,29 @@ body::before {
   @apply mt-10 flex justify-center lg:justify-start gap-4;
 }
 @utility hero-heading {
-  @apply font-iran text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] text-blue-900 text-start lg:text-start font-bold w-full;
+  @apply font-iran text-blue-900 text-start lg:text-start font-bold w-full;
 }
 @utility hero-subheading {
-  @apply font-iran mt-4 text-[clamp(1rem,0.8rem+0.85vw,1.5rem)] text-blue-900 text-start lg:text-start font-semibold w-full;
+  @apply font-iran mt-4  text-blue-900 text-start lg:text-start font-semibold w-full;
 }
 @utility hero-paragraph {
-  @apply font-iran mt-4 text-[clamp(1rem,0.85rem+0.6vw,1.375rem)] text-[#003772] text-start lg:text-start font-medium w-full;
+  @apply font-iran mt-4  text-[#003772] text-start lg:text-start font-medium w-full;
 }
 @utility hero-highlight {
   @apply text-[#E50000] font-bold;
 }
 
-/* --- Projects Grid (Updated) --- */
+/* --- Projects Grid --- */
 @utility projects-grid {
-  /* Switched to CSS Grid for explicit column control */
   @apply grid grid-cols-1 md:grid-cols-2 justify-items-center gap-10;
 }
 @utility project-item {
-  /* Removed transition for an instant effect */
   @apply mb-10 transform;
 }
 
 /* --- Contact Section --- */
 @utility contact-section-layout {
-  @apply flex flex-col-reverse lg:flex-row-reverse gap-16 items-center justify-center max-w-7xl mx-auto mt-12;
+  @apply flex flex-col-reverse lg:flex-row-reverse gap-16 items-center justify-center mt-12;
 }
 
 /*
@@ -166,7 +187,6 @@ body::before {
   @apply max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg h-full;
 }
 @utility card-inner {
-  /* Added flex properties and h-full */
   @apply bg-white rounded-[22px] flex flex-col h-full;
 }
 @utility card-image-container {
@@ -176,14 +196,12 @@ body::before {
   @apply w-full h-auto object-cover rounded-xl;
 }
 @utility card-body {
-  /* Added flex properties to grow and manage children */
   @apply font-iran p-5 pt-2 text-end flex flex-col flex-grow;
 }
 @utility card-header {
   @apply font-iran flex justify-between items-center;
 }
 @utility card-title {
-  /* Added block and truncate to prevent text wrapping */
   @apply font-iran font-black text-2xl text-[#003772] block truncate;
 }
 @utility card-year {
@@ -271,7 +289,7 @@ body::before {
   @apply w-3 h-3 rounded-full transition-colors;
 }
 @utility recommendations-text-content {
-  @apply text-start;
+  @apply text-start lg:col-span-1;
 }
 @utility recommendations-heading {
   @apply font-iran text-4xl font-extrabold bg-gradient-to-r from-[#003772] to-[#0068D8] bg-clip-text text-transparent;
@@ -317,13 +335,13 @@ body::before {
   @apply relative flex-shrink;
 }
 @utility header-image-side {
-  @apply w-[clamp(250px,25vw,400px)] aspect-square;
+  @apply w-[clamp(110px,25vw,400px)] aspect-square;
 }
 @utility header-image-center {
-  @apply w-[clamp(400px,40vw,600px)] aspect-[600/360];
+  @apply w-[clamp(160px,40vw,600px)] aspect-[600/360];
 }
 @utility header-image-bubble {
-  @apply hidden lg:block font-iran absolute bg-white rounded-xl px-5 py-3 font-medium shadow-lg text-[#003772] text-[clamp(0.625rem,1.5vw,1rem)] whitespace-nowrap;
+  @apply hidden md:block font-iran absolute bg-white rounded-xl px-5 py-3 font-medium shadow-lg text-[#003772] text-[clamp(0.625rem,1.5vw,1rem)] whitespace-nowrap;
 }
 
 /* --- Author Info --- */
@@ -392,7 +410,7 @@ body::before {
   @apply relative flex font-iran flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden;
 }
 @utility about-hero-content {
-  @apply max-w-3xl lg:ms-12;
+  @apply w-[clamp(28rem,60vw,48rem)] lg:ms-12;
 }
 @utility about-hero-heading {
   @apply text-[48px] font-bold mb-6 text-blue-900 flex items-center justify-start;
@@ -401,7 +419,7 @@ body::before {
   @apply flex justify-start gap-4;
 }
 @utility about-hero-image-frame {
-  @apply relative w-full max-w-[465px] h-[650px] mb-8 lg:mb-0 rounded-3xl;
+  @apply relative w-[clamp(17.5rem,80vw,29.06rem)] aspect-[465/650] mb-8 lg:mb-0 rounded-3xl;
 }
 @utility about-hero-image-border {
   @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100;

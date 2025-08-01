@@ -22,7 +22,7 @@ export default function ResumeSection() {
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="resume-text-content"
             >
-              <h2 className="resume-heading">دریافت رزومه</h2>
+              <h1 className="resume-heading">دریافت رزومه</h1>
               <ShimmerText>
                 می‌تونید نسخه‌ی کامل رزومه‌ی من رو از اینجا دانلود کنید.
               </ShimmerText>

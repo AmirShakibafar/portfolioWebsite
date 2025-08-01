@@ -6,14 +6,14 @@ const itemVariants: Variants = {
 };
 
 const SectionHeading = () => (
-  <motion.h2
+  <motion.h1
     variants={itemVariants}
     className="text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] font-iran font-extrabold text-center leading-tight"
   >
     <span className="text-[#003772]">خوشحال میشم که روی ایده‌های </span>
     <span className="text-red-600">جذابتون </span>
     <span className="text-[#003772]">باهم کار کنیم</span>
-  </motion.h2>
+  </motion.h1>
 );
 
 export default SectionHeading;

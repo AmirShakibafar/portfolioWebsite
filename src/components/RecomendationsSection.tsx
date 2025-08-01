@@ -67,7 +67,7 @@ export const RecomendationsSection = () => {
         <motion.div variants={itemVariants} className="recommendations-grid">
           {/* The text content is now first in the DOM to appear on the right in RTL */}
           <div className="recommendations-text-content">
-            <h2 className="recommendations-heading">دیگران چه می‌گویند؟</h2>
+            <h1 className="recommendations-heading">دیگران چه می‌گویند؟</h1>
             <p className="recommendations-subheading">
               نگاهی به نظرات همکاران و کارفرمایان
             </p>

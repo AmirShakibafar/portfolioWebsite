@@ -413,6 +413,26 @@ body::before {
   @apply object-cover;
 }
 
+/* --- Resume Section --- */
+@utility resume-section-layout {
+  @apply flex flex-col-reverse lg:flex-row items-center justify-center gap-12 lg:gap-24;
+}
+@utility resume-text-content {
+  @apply flex flex-col h-auto font-iran lg:items-end relative z-10;
+}
+@utility resume-heading {
+  @apply text-[48px] font-extrabold bg-gradient-to-r from-[#003672] to-[#005BB9] bg-clip-text text-transparent;
+}
+@utility resume-links-container {
+  @apply mt-8 flex items-center justify-center lg:justify-end gap-6;
+}
+@utility resume-image-wrapper {
+  @apply relative w-full max-w-lg;
+}
+@utility resume-image-glow {
+  @apply absolute inset-10 bg-blue-500/40 rounded-full blur-3xl -z-10;
+}
+
 /* --- Footer Section --- */
 @utility footer-container {
   @apply relative w-full h-[85vh] lg:h-screen overflow-hidden bg-[#24DAFE];

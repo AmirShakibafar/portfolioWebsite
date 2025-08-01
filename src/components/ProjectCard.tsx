@@ -1,8 +1,14 @@
 "use client";
 
-import React from "react";
-import ShinyButton from "./ShinyButton";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import {
+  motion,
+  useInView,
+  useAnimationControls,
+  Variants,
+} from "framer-motion";
+import ShinyButton from "./ShinyButton";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -47,6 +53,9 @@ type ProjectCardProps = {
   projectYear: string;
   techStack: TechName[];
   websiteUrl: string;
+  index: number;
+  className?: string;
+  onClick: () => void;
 };
 
 const ProjectCard = ({
@@ -55,42 +64,80 @@ const ProjectCard = ({
   projectYear,
   techStack,
   websiteUrl,
+  index,
+  className,
+  onClick,
 }: ProjectCardProps) => {
-  return (
-    <div className="card-wrapper">
-      <div className="card-inner">
-        <div className="card-image-container">
-          <Image
-            src={devImageSrc}
-            alt={projectName}
-            width={1200}
-            height={800}
-            className="card-image"
-          />
-        </div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const controls = useAnimationControls();
 
-        <div className="card-body">
-          <div className="card-header">
-            <p className="card-year">{projectYear}</p>
-            <p className="card-title">{projectName}</p>
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  const cardVariants: Variants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={cardVariants}
+      initial="hidden"
+      animate={controls}
+      className={`${className} cursor-pointer`}
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.25, ease: "easeIn" }}
+      onClick={onClick}
+    >
+      <div className="card-wrapper">
+        <div className="card-inner">
+          <div className="card-image-container">
+            <Image
+              src={devImageSrc}
+              alt={projectName}
+              width={1200}
+              height={800}
+              className="card-image"
+            />
           </div>
 
-          <div className="card-footer">
-            <div className="card-tech-stack">
-              {techStack.map((tech) => (
-                <div key={tech} className="card-tech-icon">
-                  {techIconMap[tech]}
-                </div>
-              ))}
+          <div className="card-body">
+            <div className="card-header">
+              <p className="card-year">{projectYear}</p>
+              <p className="card-title">{projectName}</p>
             </div>
 
-            <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
-              <ShinyButton text="رفتن به وب‌سایت" size="small" />
-            </a>
+            <div className="card-footer">
+              <div className="card-tech-stack">
+                {techStack.map((tech) => (
+                  <div key={tech} className="card-tech-icon">
+                    {techIconMap[tech]}
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ShinyButton text="رفتن به وب‌سایت" size="small" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

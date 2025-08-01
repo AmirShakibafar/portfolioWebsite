@@ -207,16 +207,16 @@ body::before {
   @apply font-iran text-[42px] font-bold text-blue-800 mb-12 text-end;
 }
 @utility skills-section-grid {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-end;
+  @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 items-start;
 }
 @utility skills-section-image-container {
   @apply flex justify-center items-center h-full;
 }
-@utility skills-section-image-glow {
-  @apply absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-yellow-400/30 rounded-full blur-[128px] -z-10;
+@utility skills-section-image-wrapper {
+  @apply relative w-[clamp(15rem,5rem+42.5vw,25rem)] aspect-[520/770];
 }
-@utility skills-section-image {
-  @apply w-[400px] h-auto relative z-10;
+@utility skills-section-image-glow {
+  @apply absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-yellow-400/30 rounded-full blur-[128px] -z-10;
 }
 @utility skills-section-right-column {
   @apply flex flex-col gap-8;

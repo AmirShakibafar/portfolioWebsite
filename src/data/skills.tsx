@@ -21,8 +21,6 @@ import {
   FaUserFriends,
   FaPalette,
   FaMousePointer,
-  FaCode,
-  FaTools,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -30,6 +28,8 @@ import {
   SiAxios,
   SiStrapi,
   SiNotion,
+  SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { TbComponents } from "react-icons/tb";
 
@@ -76,3 +76,32 @@ export const tools = [
   { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
   { name: "Notion", icon: <SiNotion className="text-black" /> },
 ];
+
+export const techIconMap = {
+  HTML5: { icon: <FaHtml5 className="text-orange-600" />, name: "HTML5" },
+  CSS3: { icon: <FaCss3Alt className="text-blue-600" />, name: "CSS3" },
+  JavaScript: {
+    icon: <FaJs className="text-yellow-400" />,
+    name: "JavaScript",
+  },
+  React: { icon: <FaReact className="text-sky-400" />, name: "React" },
+  TailwindCSS: {
+    icon: <SiTailwindcss className="text-cyan-400" />,
+    name: "Tailwind CSS",
+  },
+  Bootstrap: {
+    icon: <FaBootstrap className="text-purple-700" />,
+    name: "Bootstrap",
+  },
+  Redux: { icon: <SiRedux className="text-purple-500" />, name: "Redux" },
+  NextJs: { icon: <SiNextdotjs className="text-black" />, name: "Next.js" },
+  Figma: { icon: <FaFigma className="text-pink-500" />, name: "Figma" },
+  Axios: { icon: <SiAxios className="text-purple-600" />, name: "Axios" },
+  TypeScript: {
+    icon: <SiTypescript className="text-blue-500" />,
+    name: "TypeScript",
+  },
+  Sass: { icon: <FaSass className="text-pink-400" />, name: "Sass" },
+  Git: { icon: <FaGitAlt className="text-orange-700" />, name: "Git" },
+  Npm: { icon: <FaNpm className="text-red-500" />, name: "npm" },
+};

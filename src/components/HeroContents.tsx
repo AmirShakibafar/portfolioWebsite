@@ -72,6 +72,7 @@ export default function HeroContent() {
                 initial="hidden"
                 animate="visible"
                 transition={{ staggerChildren: 0.1 }}
+                viewport={{ once: true, amount: 0.25 }}
               >
                 <motion.span
                   variants={headingChild}
@@ -123,7 +124,7 @@ export default function HeroContent() {
 
           <motion.div
             className="hero-image-wrapper"
-            // ... props
+            viewport={{ once: true, amount: 0.25 }}
           >
             <Image
               src="/images/hero_image.png"

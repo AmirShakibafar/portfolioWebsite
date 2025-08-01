@@ -51,7 +51,7 @@ export default function AboutHero() {
         variants={imageVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.25 }}
         className="about-hero-image-frame group"
       >
         <motion.div className="about-hero-image-border" style={borderStyle} />

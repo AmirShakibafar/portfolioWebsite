@@ -217,12 +217,75 @@ p {
   @apply transition-transform duration-300 hover:scale-125;
 }
 
+/* --- Project Modal --- */
+@utility modal-panel {
+  @apply bg-white rounded-[22px] max-h-[90vh] md:max-h-[85vh] overflow-y-hidden p-4 md:p-6 font-iran;
+}
+@utility modal-header {
+  @apply flex justify-between items-baseline mt-3 mb-3;
+}
+@utility modal-title {
+  @apply text-2xl font-bold text-slate-800;
+}
+@utility modal-year {
+  @apply text-sm text-slate-500;
+}
+@utility modal-backdrop {
+  @apply fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-[80] flex items-center justify-center p-4;
+}
+@utility modal-content {
+  @apply relative w-full max-w-2xl;
+}
+@utility modal-border {
+  @apply p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg;
+}
+
+@utility modal-close-button {
+  @apply absolute top-3.5 end-3.5 text-gray-400 hover:text-black hover:bg-gray-200 rounded-full p-1.5 transition-colors z-20;
+}
+
+@utility modal-description {
+  @apply text-sm text-slate-600 leading-relaxed;
+}
+@utility modal-divider {
+  @apply my-4 border-slate-200;
+}
+@utility modal-subtitle {
+  @apply text-base font-bold text-slate-700 mb-3;
+}
+@utility modal-tech-stack {
+  @apply flex flex-wrap gap-2;
+}
+@utility modal-tech-pill {
+  @apply flex items-center gap-2 bg-slate-100 rounded-full px-3 py-1;
+}
+@utility modal-tech-pill-name {
+  @apply text-xs font-medium text-slate-700;
+}
+@utility modal-footer {
+  @apply mt-5 text-start;
+}
+
+/* --- Carousel --- */
+@utility carousel-container {
+  @apply relative w-full aspect-[1.9/1] overflow-hidden rounded-xl;
+}
+@utility carousel-track {
+  @apply flex h-full;
+}
+@utility carousel-image {
+  @apply w-full h-full object-cover flex-shrink-0 bg-slate-100;
+}
+@utility carousel-nav-button {
+  @apply absolute top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70 transition-colors focus:outline-none z-10;
+}
+
 /* --- Skills Section --- */
 @utility skills-section-inner-wrapper {
   @apply p-6;
 }
 @utility skills-section-heading {
-  @apply font-iran font-extrabold text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] mb-4 text-blue-900 text-start lg:text-start w-full;;
+  @apply font-iran font-extrabold text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] mb-4 text-blue-900 text-start lg:text-start w-full;
 }
 @utility skills-section-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 items-start;

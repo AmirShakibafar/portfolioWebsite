@@ -12,7 +12,7 @@ import ProjectCard from "./ProjectCard";
 import ShinyButton from "./ShinyButton";
 import ProjectModal from "./ProjectModal";
 
-// Expanded project data with descriptions and multiple images
+
 const myProjects = [
   {
     devImageSrc: "/images/project.png",

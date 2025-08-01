@@ -96,6 +96,7 @@ const ProjectCard = ({
       className={`${className} cursor-pointer`}
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.25, ease: "easeIn" }}
+      viewport={{ once: true, amount: 0.25 }}
       onClick={onClick}
     >
       <div className="card-wrapper">

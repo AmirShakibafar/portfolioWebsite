@@ -6,8 +6,11 @@ import AnimatedWords from "./AnimatedWords";
 import AnimatedNumber from "./AnimatedNumber";
 import ShinyButton from "./ShinyButton";
 import React, { useEffect } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function HeroContent() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   const headingChild: Variants = {
     visible: {
       opacity: 1,
@@ -31,7 +34,7 @@ export default function HeroContent() {
   const imageVariants: Variants = {
     hidden: {
       opacity: 0,
-      x: "-50vw", // Fly in from off-screen left
+      x: "-50vw",
       scale: 0.8,
     },
     flyIn: {
@@ -58,10 +61,10 @@ export default function HeroContent() {
 
   return (
     <>
-      <div className="absolute top-0 start-0 h-full w-3/5 backdrop-blur-sm [mask-image:linear-gradient(to_right,rgba(0,0,0,0),rgba(0,0,0,1))]" />
-      <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="flex items-center gap-8">
-          <div className="flex flex-col p-6">
+      <div className="hero-blur-effect" />
+      <div className="relative z-10">
+        <div className="hero-layout-container">
+          <div className="hero-text-wrapper">
             <h1 className="hero-heading">
               <AnimatedWords text="!سلام" />
               <motion.div
@@ -101,27 +104,33 @@ export default function HeroContent() {
               استار گیت‌هاب
             </p>
 
-            <div className="mt-10 flex justify-start gap-4">
+            <div className="hero-buttons-container">
               <Link href="#projects">
-                <ShinyButton text="دیدن نمونه کارهام →" variant="secondary" />
+                <ShinyButton
+                  text="دیدن نمونه کارهام →"
+                  variant="secondary"
+                  // The size prop is removed
+                />
               </Link>
               <Link href="#contact">
-                <ShinyButton text="تماس با من →" />
+                <ShinyButton
+                  text="تماس با من →"
+                  // The size prop is removed
+                />
               </Link>
             </div>
           </div>
 
           <motion.div
-            variants={imageVariants}
-            initial="hidden"
-            animate={controls}
+            className="hero-image-wrapper"
+            // ... props
           >
             <Image
               src="/images/hero_image.png"
               alt="Superhero Amir"
-              width={520}
-              height={770}
-              className="[transform:translateZ(50px)]"
+              fill
+              priority
+              className="object-cover [transform:translateZ(50px)]"
             />
           </motion.div>
         </div>

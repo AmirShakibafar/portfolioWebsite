@@ -127,7 +127,7 @@ const SkillCategory = ({
 
   return (
     <div className="skill-category-wrapper">
-      <div className={`skill-category-glow ${styles.glow}`} />
+      {/* <div className={`skill-category-glow ${styles.glow}`} /> */}
       <div className="relative z-10">
         <h3 className="skill-category-heading">
           <span className={`skill-category-title ${styles.gradient}`}>
@@ -233,7 +233,7 @@ const SkillsSection = () => {
               className="skills-section-image-container"
             >
               <div className="relative">
-                <div className="skills-section-image-glow" />
+                {/* <div className="skills-section-image-glow" /> */}
                 <Image
                   src="/images/skills-img.png"
                   alt="Superhero Character"

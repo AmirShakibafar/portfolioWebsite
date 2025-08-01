@@ -83,17 +83,29 @@ body::before {
 }
 
 /* --- Hero Section --- */
-@utility hero-text-content {
-  @apply font-iran flex flex-col justify-center backdrop-blur-sm bg-white/10;
+@utility hero-blur-effect {
+  @apply hidden lg:block absolute top-0 start-0 h-full w-3/5 backdrop-blur-sm [mask-image:linear-gradient(to_right,rgba(0,0,0,0),rgba(0,0,0,1))];
+}
+@utility hero-layout-container {
+  @apply flex flex-col-reverse items-center gap-y-8 lg:flex-row lg:gap-x-8 w-full justify-center px-[16.5px] lg:px-8;
+}
+@utility hero-text-wrapper {
+  @apply flex flex-col items-center lg:items-start w-full max-w-xl;
+}
+@utility hero-image-wrapper {
+  @apply relative w-[clamp(15rem,5rem+42.5vw,32.5rem)] aspect-[520/770] flex-shrink-0;
+}
+@utility hero-buttons-container {
+  @apply mt-10 flex justify-center lg:justify-start gap-4;
 }
 @utility hero-heading {
-  @apply font-iran text-[64px] text-blue-900 text-start font-bold;
+  @apply font-iran text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] text-blue-900 text-start lg:text-start font-bold w-full;
 }
 @utility hero-subheading {
-  @apply font-iran mt-4 text-[28px] text-blue-900 text-start font-semibold;
+  @apply font-iran mt-4 text-[clamp(1rem,0.8rem+0.85vw,1.5rem)] text-blue-900 text-start lg:text-start font-semibold w-full;
 }
 @utility hero-paragraph {
-  @apply font-iran mt-4 text-[24px] text-[#003772] text-start font-medium;
+  @apply font-iran mt-4 text-[clamp(1rem,0.85rem+0.6vw,1.375rem)] text-[#003772] text-start lg:text-start font-medium w-full;
 }
 @utility hero-highlight {
   @apply text-[#E50000] font-bold;
@@ -346,7 +358,6 @@ body::before {
   @apply relative font-iran font-bold text-white;
 }
 
-
 /* --- About Hero Section --- */
 @utility about-hero-section {
   @apply relative flex font-iran flex-col-reverse lg:flex-row items-center justify-center px-6 py-24 text-gray-800 overflow-hidden;
@@ -395,7 +406,7 @@ body::before {
 
 /* --- Shiny Button --- */
 @utility shiny-btn-container {
-  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 hover:shadow-[0_0_25px_#005BB9];
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 hover:shadow-[0_0_25px_#005BB9] h-[clamp(2.75rem,2.25rem+2.1vw,3.5rem)] px-[clamp(1.5rem,1rem+2.1vw,2.25rem)];
 }
 @utility shiny-btn-border {
   @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100;
@@ -404,9 +415,8 @@ body::before {
   @apply absolute inset-[2.5px] rounded-full;
 }
 @utility shiny-btn-text {
-  @apply relative font-bold;
+  @apply relative font-bold text-[clamp(0.9rem,0.75rem+0.65vw,1.1rem)] whitespace-nowrap;
 }
-
 /*
 |--------------------------------------------------------------------------
 | 5. Animations
@@ -466,7 +476,6 @@ body::before {
     transform: scale(1) rotate(360deg);
   }
 }
-
 
 /*
 |--------------------------------------------------------------------------

@@ -193,7 +193,7 @@ p {
   @apply relative p-3 aspect-video;
 }
 @utility card-image {
-  @apply w-full h-auto object-cover rounded-xl;
+  @apply min-w-full aspect-video object-cover rounded-xl;
 }
 @utility card-body {
   @apply font-iran p-5 pt-2 text-end flex flex-col flex-grow;
@@ -269,7 +269,7 @@ p {
 
 /* --- Carousel --- */
 @utility carousel-container {
-  @apply relative w-full overflow-hidden rounded-xl;
+  @apply relative w-full  overflow-hidden rounded-xl;
 }
 @utility carousel-track {
   @apply flex h-full;

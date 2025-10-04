@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000" 
     env_file:
-      - .smaila.env
+      - .smail.env
 
   smaila:
     image: ghcr.io/cactusbros/smaila:latest
@@ -15,5 +15,5 @@ services:
       - "1174:1174"
     platform: linux/amd64 
     env_file:
-      - .smaila.env
+      - .smail.env
     restart: unless-stopped

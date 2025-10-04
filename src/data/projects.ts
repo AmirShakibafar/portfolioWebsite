@@ -11,59 +11,59 @@ export type Project = {
 };
 export const myProjects: Project[] = [
   {
-    devImageSrc: "/images/project.avif",
+    devImageSrc: "/images/projects/cms/2.png",
     images: [
-      "/images/project.avif",
-      "/images/project-2.png",
-      "/images/project-3.png",
+      "/images/projects/cms/1.png",
+      "/images/projects/cms/2.png",
+      "/images/projects/cms/3.png",
+      "/images/projects/cms/4.png",
     ],
-    projectName: "پروژه وب اپلیکیشن مدرن",
+    projectName: "سیستم مدیریت محتوا (CMS)",
+    projectYear: "2024",
+    techStack: ["React", "Axios", "JavaScript", "CSS3", "Git", "Figma"],
+    websiteUrl: "#",
+    description:
+      "توسعه یک سیستم مدیریت محتوا با قابلیت‌های پیشرفته برای ایجاد، ویرایش و مدیریت محتوای وب‌سایت‌ها با رابط کاربری ساده و کاربرپسند.",
+  },
+  {
+    devImageSrc: "/images/projects/gitart/1.png",
+    images: [
+      "/images/projects/gitart/1.png",
+      "/images/projects/gitart/2.png",
+      "/images/projects/gitart/3.png"
+    ],
+    projectName: "پروژه گیت‌آرت (GitArt)",
     projectYear: "2025",
-    techStack: ["React", "NextJs", "TypeScript", "TailwindCSS"],
+    techStack: ["React", "JavaScript", "Git", "TailwindCSS"],
     websiteUrl: "#",
     description:
-      "یک وب اپلیکیشن مدرن با استفاده از جدیدترین تکنولوژی‌ها برای ارائه تجربه کاربری بی‌نظیر. این پروژه شامل داشبورد تحلیلی و مدیریت محتوا است.",
+      "پلتفرم برای ساخت پیکسل ارت در صفحه کانتریبوشن گیت‌هاب با استفاده از داده‌های کاربران و نمایش آن به صورت تعاملی.",
   },
   {
-    devImageSrc: "/images/project.avif",
+    devImageSrc: "/images/projects/os/1.png",
     images: [
-      "/images/project.avif",
-      "/images/project-2.png",
-      "/images/project-3.png",
+      "/images/projects/os/1.png",
+      "/images/projects/os/2.png",
+      "/images/projects/os/3.png",
     ],
-    projectName: "پروژه وبسایت شرکتی",
-    projectYear: "2024",
-    techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "Git"],
-    websiteUrl: "#",
-    description:
-      "طراحی و توسعه یک وب‌سایت شرکتی حرفه‌ای با تمرکز بر هویت بصری و بهینه‌سازی برای موتورهای جستجو (SEO).",
-  },
-  {
-    devImageSrc: "/images/project.avif",
-    images: [
-      "/images/project.avif",
-      "/images/project-2.png",
-      "/images/project-3.png",
-    ],
-    projectName: "پروژه داشبورد مدیریتی",
-    projectYear: "2024",
-    techStack: ["React", "Redux", "Axios", "Npm"],
-    websiteUrl: "#",
-    description:
-      "داشبورد مدیریتی قدرتمند برای تحلیل داده‌ها و نظارت بر عملکرد با استفاده از نمودارها و گزارش‌های تعاملی.",
-  },
-  {
-    devImageSrc: "/images/project.avif",
-    images: [
-      "/images/project.avif",
-      "/images/project-2.png",
-      "/images/project-3.png",
-    ],
-    projectName: "پروژه طراحی و UI کیت",
+    projectName: "ویژوال‌سازی الگوریتم های سیستم‌عامل",
     projectYear: "2023",
-    techStack: ["Figma", "Bootstrap", "JavaScript"],
+    techStack: ["JavaScript", "HTML5", "CSS3"],
     websiteUrl: "#",
     description:
-      "طراحی یک کیت UI کامل در فیگما و پیاده‌سازی آن با هدف ایجاد یک سیستم طراحی یکپارچه برای توسعه سریع‌تر محصولات.",
+      "یک پروژه آموزشی برای شبیه‌سازی و نمایش بصری الگوریتم‌های مختلف سیستم‌عامل مانند زمان‌بندی CPU، مدیریت حافظه و مدیریت فایل‌ها.",
+  },
+  {
+    devImageSrc: "/images/projects/wiseman/1.png",
+    images: [
+      "/images/projects/wiseman/1.png",
+      "/images/projects/wiseman/2.png",
+    ],
+    projectName: "اکستنشن وی اس کد",
+    projectYear: "2023",
+    techStack: ["JavaScript", "CSS3", "Git"],
+    websiteUrl: "#",
+    description:
+      "توسعه یک اکستنشن برای ویرایشگر کد وی اس کد که قابلیت‌های جدیدی را برای بهبود تجربه برنامه‌نویسی فراهم می‌کند.",
   },
 ];

@@ -18,7 +18,7 @@ const headingChild: Variants = {
 export default function HeroHeadingClient() {
   return (
     <>
-      <AnimatedWords text="!سلام" />
+      <AnimatedWords text="سلام!" />
       <motion.div
         className="flex justify-start"
         initial="hidden"

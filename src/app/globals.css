@@ -219,8 +219,9 @@ p {
 
 /* --- Project Modal --- */
 @utility modal-panel {
-  @apply bg-white rounded-[22px] max-h-[90vh] md:max-h-[85vh] overflow-y-hidden p-4 md:p-6 font-iran;
+  @apply bg-white rounded-[22px] max-h-[90vh] md:max-h-[85vh] overflow-y-auto p-4 md:p-6 font-iran;
 }
+
 @utility modal-header {
   @apply flex justify-between items-baseline mt-3 mb-3;
 }
@@ -268,7 +269,7 @@ p {
 
 /* --- Carousel --- */
 @utility carousel-container {
-  @apply relative w-full aspect-[1.9/1] overflow-hidden rounded-xl;
+  @apply relative w-full overflow-hidden rounded-xl;
 }
 @utility carousel-track {
   @apply flex h-full;

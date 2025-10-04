@@ -27,7 +27,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         initial={{ scale: 0.95, y: 30 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 30 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={{ type: "spring", stiffness: 500, damping: 20, mass: 0.8 }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modal-border">

@@ -45,10 +45,10 @@ export default function Carousel({ images, projectName }: CarouselProps) {
           />
         ))}
       </motion.div>
-      <button onClick={prevSlide} className="carousel-nav-button start-3">
+      <button onClick={prevSlide} className="carousel-nav-button end-3">
         <ChevronLeft size={24} />
       </button>
-      <button onClick={nextSlide} className="carousel-nav-button end-3">
+      <button onClick={nextSlide} className="carousel-nav-button start-3">
         <ChevronRight size={24} />
       </button>
     </div>

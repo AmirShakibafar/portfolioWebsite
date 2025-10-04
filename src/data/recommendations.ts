@@ -9,7 +9,15 @@ export type Recommendation = {
 export const recommendationsData: Recommendation[] = [
   {
     quote:
-      "امیر خیلی ادم عجیبیه و یکم ممکنه شلخته باشه ولی بچه خوبیه. نکته منفی اینکه دهنش بو میده ولی بچه پر تلاشيه.",
+      "امیر خیلی ادم عجیبیه ولی بچه خوب و پر تلاشيه.",
+    name: "امیر شکیبافر",
+    title: "توسعه دهنده فرانت‌اند هرمزگان",
+    imageSrc: "/images/author-placeholder.jpg",
+    linkedinUrl: "#",
+  },
+  {
+quote:
+      "امیر خیلی ادم عجیبیه ولی بچه خوب و پر تلاشيه.",
     name: "امیر شکیبافر",
     title: "توسعه دهنده فرانت‌اند هرمزگان",
     imageSrc: "/images/author-placeholder.jpg",
@@ -25,15 +33,7 @@ export const recommendationsData: Recommendation[] = [
   },
   {
     quote:
-      "امیر خیلی ادم عجیبیه و یکم ممکنه شلخته باشه ولی بچه خوبیه. نکته منفی اینکه دهنش بو میده ولی بچه پر تلاشيه.",
-    name: "امیر شکیبافر",
-    title: "توسعه دهنده فرانت‌اند هرمزگان",
-    imageSrc: "/images/author-placeholder.jpg",
-    linkedinUrl: "#",
-  },
-  {
-    quote:
-      "امیر خیلی ادم عجیبیه و یکم ممکنه شلخته باشه ولی بچه خوبیه. نکته منفی اینکه دهنش بو میده ولی بچه پر تلاشيه.",
+      "امیر خیلی ادم عجیبیه ولی بچه خوب و پر تلاشيه.",
     name: "امیر شکیبافر",
     title: "توسعه دهنده فرانت‌اند هرمزگان",
     imageSrc: "/images/author-placeholder.jpg",

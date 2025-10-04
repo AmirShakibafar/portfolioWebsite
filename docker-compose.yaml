@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" 
+    env_file:
+      - .smaila.env
+
+  smaila:
+    image: ghcr.io/cactusbros/smaila:latest
+    container_name: smaila
+    ports:
+      - "1174:1174"
+    platform: linux/amd64 
+    env_file:
+      - .smaila.env
+    restart: unless-stopped

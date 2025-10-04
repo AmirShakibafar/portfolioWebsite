@@ -140,7 +140,7 @@ p {
   @apply relative w-[clamp(15rem,5rem+42.5vw,32.5rem)] aspect-[520/770] flex-shrink-0;
 }
 @utility hero-buttons-container {
-  @apply mt-10 flex justify-center lg:justify-start gap-4;
+  @apply w-full mt-10 flex justify-start lg:gap-4;
 }
 @utility hero-heading {
   @apply font-iran text-blue-900 text-start lg:text-start font-bold w-full;
@@ -513,7 +513,7 @@ p {
 
 /* --- Shiny Button --- */
 @utility shiny-btn-container {
-  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 shadow-[0_0_25px_#005BB9] md:shadow-none md:hover:shadow-[0_0_25px_#005BB9] h-[clamp(3rem,2.5rem+2.5vw,4rem)] px-[clamp(1.5rem,1rem+2vw,2.5rem)];
+  @apply cursor-pointer relative inline-flex items-center justify-center overflow-hidden rounded-full font-iran transition-shadow duration-300 shadow-[0_0_25px_#005BB9] md:shadow-none md:hover:shadow-[0_0_25px_#005BB9] h-[clamp(3rem,2.5rem+2.5vw,4rem)] px-[clamp(1.5rem,1rem+2vw,2.5rem)];
 }
 @utility shiny-btn-border {
   @apply absolute inset-0 rounded-full transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100;

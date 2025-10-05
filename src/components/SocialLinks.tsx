@@ -4,12 +4,14 @@ import { GitHub, Linkedin, Phone, Mail } from 'react-feather';
 import { motion } from 'framer-motion';
 import { useInvertedColor } from '../hooks/useInvertedColor';
 
+
 const socialLinks = [
-  { name: 'GitHub', icon: GitHub, href: 'https://github.com/your-username' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/your-profile' },
-  { name: 'Phone', icon: Phone, href: 'tel:+1234567890' },
-  { name: 'Email', icon: Mail, href: 'mailto:your.email@example.com' },
+  { name: 'GitHub', icon: GitHub, href: 'https://github.com/AmirShakibafar' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/amirshakibafar' },
+  { name: 'Phone', icon: Phone, href: 'tel:+989383999597' },
+  { name: 'Email', icon: Mail, href: 'mailto:amir.shakibafar82@gmail.com' },
 ];
+
 
 export default function SocialLinks() {
   const socialLinksRef = useRef(null);

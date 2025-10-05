@@ -7,6 +7,7 @@ import { techIconMap } from "@/data/skills";
 import { Project } from "@/data/projects";
 import ShinyButton from "./ShinyButton";
 import Carousel from "./Carousel";
+import CarouselWithScrollNav from "./Carousel";
 
 type ProjectModalProps = {
   project: Project;
@@ -36,7 +37,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <X size={22} />
             </button>
 
-            <Carousel
+            <CarouselWithScrollNav
               images={project.images}
               projectName={project.projectName}
             />

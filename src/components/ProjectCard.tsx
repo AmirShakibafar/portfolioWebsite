@@ -51,6 +51,8 @@ const ProjectCard = ({
     },
   };
 
+  const hasValidUrl = websiteUrl && websiteUrl !== "#" && websiteUrl.trim() !== "";
+
   return (
     <motion.div
       ref={ref}
@@ -90,16 +92,20 @@ const ProjectCard = ({
                 ))}
               </div>
 
-              <a
-                href={websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <ShinyButton text="رفتن به وب‌سایت">
-                  <ArrowUpRight className="ms-2" size={16} />
-                </ShinyButton>
-              </a>
+              {hasValidUrl ? (
+                <a
+                  href={websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ShinyButton text="رفتن به وب‌سایت">
+                    <ArrowUpRight className="ms-2" size={16} />
+                  </ShinyButton>
+                </a>
+              ) : (
+                <ShinyButton text="وب‌سایت در دسترس نیست" disabled />
+              )}
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ export default function CarouselWithButtons({
         scrollByPage("prev");
       }
     };
-    c.addEventListener("keydown", onKey as any);
+    c.addEventListener("keydown", onKey as EventListener);
 
     // initial check after images loaded (in case images change layout)
     const t = setTimeout(updateButtons, 60);
@@ -69,7 +69,7 @@ export default function CarouselWithButtons({
       clearTimeout(t);
       c.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
-      c.removeEventListener("keydown", onKey as any);
+      c.removeEventListener("keydown", onKey as EventListener);
       if (raf) cancelAnimationFrame(raf);
     };
   }, [updateButtons]);

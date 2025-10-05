@@ -7,8 +7,9 @@ import { ShimmerText } from "./ShimmerText";
 import ResumeLink from "./ResumeLink";
 
 export default function ResumeSection() {
-  const persianResumePath = "/resumes/AmirShakibafar_Resume_FA.pdf";
-  const englishResumePath = "/resumes/AmirShakibafar_Resume_EN.pdf";
+  // ✅ Updated file paths to match your actual files
+  const persianResumePath = "/resume/Amir%20Shakibafar%20Persian%20Resume.pdf";
+  const englishResumePath = "/resume/Amir-Shakibafar-English-Resume.pdf";
 
   return (
     <section id="resume" className="section-container">
@@ -30,13 +31,13 @@ export default function ResumeSection() {
               <div className="resume-links-container">
                 <ResumeLink
                   href={persianResumePath}
-                  download="AmirShakibafar_Resume_FA.pdf"
+                  download="Amir Shakibafar Persian Resume.pdf"
                   text="دانلود نسخه فارسی"
                   variant="primary"
                 />
                 <ResumeLink
                   href={englishResumePath}
-                  download="AmirShakibafar_Resume_EN.pdf"
+                  download="Amir-Shakibafar-English-Resume.pdf"
                   text="Download English CV"
                   variant="secondary"
                 />

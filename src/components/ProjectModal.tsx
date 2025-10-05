@@ -6,7 +6,6 @@ import { X, ArrowUpRight } from "lucide-react";
 import { techIconMap } from "@/data/skills";
 import { Project } from "@/data/projects";
 import ShinyButton from "./ShinyButton";
-import Carousel from "./Carousel";
 import CarouselWithScrollNav from "./Carousel";
 
 type ProjectModalProps = {
@@ -15,6 +14,9 @@ type ProjectModalProps = {
 };
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const hasValidUrl =
+    project.websiteUrl && project.websiteUrl !== "#" && project.websiteUrl.trim() !== "";
+
   return (
     <motion.div
       className="modal-backdrop"
@@ -67,15 +69,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             <div className="modal-footer">
-              <a
-                href={project.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ShinyButton text="رفتن به وب‌سایت">
-                  <ArrowUpRight className="ms-2" size={16} />
-                </ShinyButton>
-              </a>
+              {hasValidUrl ? (
+                <a
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ShinyButton text="رفتن به وب‌سایت">
+                    <ArrowUpRight className="ms-2" size={16} />
+                  </ShinyButton>
+                </a>
+              ) : (
+                <ShinyButton text="وب‌سایت در دسترس نیست" disabled />
+              )}
             </div>
           </div>
         </div>

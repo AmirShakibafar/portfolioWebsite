@@ -2,15 +2,16 @@ services:
   app:
     image: ghcr.io/amirshakibafar/portfolio-website:latest
     ports:
-      - "3000:3000" 
+      - "1382:3000" 
     env_file:
       - .smail.env
 
   smaila:
     image: ghcr.io/cactusbros/smaila:latest
     container_name: smaila
-    ports:
-      - "1174:1174"
+    expose:
+      - 1174
+    ports: []
     platform: linux/amd64 
     env_file:
       - .smail.env

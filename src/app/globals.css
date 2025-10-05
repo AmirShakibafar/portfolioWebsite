@@ -178,7 +178,7 @@ p {
   @apply font-iran text-blue-900 text-start lg:text-start font-bold w-full;
 }
 @utility hero-subheading {
-  @apply font-iran mt-4 text-[clamp(1rem,1rem+1.5vw,2.25rem)] text-blue-900 text-start lg:text-start font-semibold w-full;
+  @apply font-iran mt-4 text-[clamp(1rem,1rem+1.5vw,1.75rem)] text-blue-900 text-start lg:text-start font-semibold w-full;
 }
 @utility hero-paragraph {
   @apply font-iran mt-4  text-[#003772] text-start lg:text-start font-medium w-full;

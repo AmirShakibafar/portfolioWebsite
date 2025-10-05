@@ -33,7 +33,7 @@ jobs:
             TAG=latest                     # Use 'latest' for branch pushes
           fi
 
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/portfolio-website:$TAG
+          IMAGE_NAME=ghcr.io/amirshakibafar/portfolio-website:$TAG
 
           echo "Building image $IMAGE_NAME"
           docker build -t $IMAGE_NAME .

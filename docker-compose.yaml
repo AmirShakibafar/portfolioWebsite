@@ -2,7 +2,7 @@ services:
   app:
     image: ghcr.io/amirshakibafar/portfolio-website:latest
     ports:
-      - "1382:3000" 
+      - "127.0.0.1:1382:3000" 
     env_file:
       - .smail.env
 

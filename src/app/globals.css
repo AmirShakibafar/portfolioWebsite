@@ -89,12 +89,13 @@ h6 {
 }
 
 h1 {
-  @apply font-extrabold text-[clamp(2rem,1.5rem+2.1vw,3.5rem)] mb-4;
+  @apply font-extrabold text-[clamp(1.75rem,1.5rem+2.1vw,3.5rem)] mb-4;
 }
 
 h2 {
-  @apply font-bold text-[clamp(1.25rem,1rem+1vw,2.25rem)] mb-3;
+  @apply font-bold text-[clamp(1rem,1rem+1vw,2rem)] mb-3;
 }
+
 
 p {
   @apply text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] leading-loose;
@@ -216,8 +217,9 @@ p {
 
 /* --- Project Cards --- */
 @utility card-wrapper {
-  @apply max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg h-auto;
+  @apply w-full min-w-0 max-w-lg p-1 rounded-3xl bg-gradient-to-br from-[#E40000] to-[#003772] shadow-lg h-auto;
 }
+
 @utility card-inner {
   @apply bg-white rounded-[22px] flex flex-col h-full;
 }
@@ -225,13 +227,15 @@ p {
   @apply relative p-3 aspect-video;
 }
 @utility card-image {
-  @apply min-w-full aspect-video object-cover rounded-xl;
+  @apply w-full object-cover rounded-xl;
 }
+
 @utility card-body {
-  @apply font-iran p-5 pt-2 text-end flex flex-col flex-grow;
+  @apply font-iran p-4 pt-2 sm:p-5 text-end flex flex-col flex-grow;
 }
+
 @utility card-header {
-  @apply font-iran flex justify-between items-center;
+  @apply font-iran flex justify-between items-center flex-wrap;
 }
 @utility card-title {
   @apply font-iran font-black text-2xl text-[#003772] block truncate;

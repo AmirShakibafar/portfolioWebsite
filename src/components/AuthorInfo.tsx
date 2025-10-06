@@ -6,18 +6,18 @@ import { ShimmerText } from "./ShimmerText";
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/your-username",
+    href: "https://github.com/AmirShakibafar",
     icon: <GitHub size={24} />,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/amirshakibafar",
     icon: <Linkedin size={24} />,
   },
-  { name: "Phone", href: "tel:+1234567890", icon: <Phone size={24} /> },
+  { name: "Phone", href: "tel:+989383999597", icon: <Phone size={24} /> },
   {
     name: "Email",
-    href: "mailto:your.email@example.com",
+    href: "mailto:amir.shakibafar82@gmail.com",
     icon: <Mail size={24} />,
   },
 ];
